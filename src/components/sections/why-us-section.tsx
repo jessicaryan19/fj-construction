@@ -18,7 +18,7 @@ export default function WhyUsSection() {
         title: "Competitive and Flexible Pricing"
     }]
     return (
-        <div className="relative bg-primary w-full flex items-center justify-center p-30">
+        <div className="relative bg-primary w-full flex items-center justify-center p-20">
             <div className="absolute inset-0 bg-[url('/texture.jpg')] bg-center bg-cover mix-blend-lighten opacity-20" />
 
             <div className="relative container">
