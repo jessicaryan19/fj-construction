@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import Line from "../ui/line";
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "../ui/carousel";
 import { Icon } from "@iconify/react";
-import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 
 export default function WhatTheySay() {
@@ -44,7 +43,6 @@ export default function WhatTheySay() {
         if (!api) {
             return
         }
-        setCurrent(api.selectedScrollSnap())
         api.on("select", () => {
             setCurrent(api.selectedScrollSnap())
         })
@@ -70,7 +68,7 @@ export default function WhatTheySay() {
                 </div>
 
                 <div className="flex flex-col pt-8">
-                    <Carousel setApi={setApi}>
+                    <Carousel setApi={setApi} opts={{ loop: true }}>
                         <CarouselContent>
                             {testimonials.map((testimonial) => (
                                 <CarouselItem key={testimonial.name} className="flex gap-20 px-20 py-10 items-center">
