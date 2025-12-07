@@ -55,7 +55,7 @@ export default function WhatTheySay() {
                 <h1 className="text-primary">What they say about us</h1>
             </div>
 
-            <div className="relative bg-primary rounded-3xl pb-10">
+            <div className="relative bg-primary rounded-3xl pb-10 overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image
                         src="/texture.jpg"

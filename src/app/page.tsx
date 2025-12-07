@@ -1,6 +1,7 @@
 import AboutSection from "@/components/sections/about-section";
 import HeroSection from "@/components/sections/hero-section";
 import OfferExpertise from "@/components/sections/offer-expertise";
+import OurProjectsHighlight from "@/components/sections/our-projects-highlight";
 import WhatTheySay from "@/components/sections/what-they-say";
 import WhyPartnerSection from "@/components/sections/why-partner-section";
 import WhyUsSection from "@/components/sections/why-us-section";
@@ -13,6 +14,9 @@ export default function Home() {
         <AboutSection />
         <WhyUsSection />
         <OfferExpertise />
+        
+        <OurProjectsHighlight/>
+
         <WhyPartnerSection />
         <WhatTheySay />
       </main>
