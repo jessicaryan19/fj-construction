@@ -44,8 +44,8 @@ export default function AboutSection() {
                                     <Image
                                         src={`/about/image-${index + 1}.jpg`}
                                         alt={`About ${index + 1}`}
+                                        className="object-cover object-center"
                                         fill
-                                        className="object-cover"
                                     />
                                 </div>
                             </CarouselItem>

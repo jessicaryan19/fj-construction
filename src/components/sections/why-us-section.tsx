@@ -18,10 +18,12 @@ export default function WhyUsSection() {
         title: "Competitive and Flexible Pricing"
     }]
     return (
-        <div className="bg-primary w-full flex items-center justify-center p-20">
-            <div className="container">
-                <div className="text-secondary opacity-60 text-8xl">Why Us?</div>
-                <div className="grid grid-cols-5 gap-6 h-60">
+        <div className="relative bg-primary w-full flex items-center justify-center p-30">
+            <div className="absolute inset-0 bg-[url('/texture.jpg')] bg-center bg-cover mix-blend-lighten opacity-20" />
+
+            <div className="relative container">
+                <div className="text-secondary opacity-60 text-8xl px-30">Why Us?</div>
+                <div className="grid grid-cols-5 gap-6 h-80">
                     {
                         reasons.map((reason) => (
                             <FeatureCard
