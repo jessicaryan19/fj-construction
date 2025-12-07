@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/about-section";
+import OfferExpertise from "@/components/sections/offer-expertise";
 import WhyUsSection from "@/components/sections/why-us-section";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col items-center bg-white dark:bg-black">
         <AboutSection/>
         <WhyUsSection/>
+        <OfferExpertise/>
       </main>
     </div>
   );
