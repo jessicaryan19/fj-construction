@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Adamina } from "next/font/google";
 import "./globals.css";
+import NavigationBar from "@/components/layout/navigation-bar";
 
 const adamina = Adamina({
   variable: "--font-adamina",
@@ -23,6 +24,9 @@ export default function RootLayout({
       <body
         className={`${adamina.variable} antialiased`}
       >
+        <div className="flex w-full items-center justify-center">
+          <NavigationBar />
+        </div>
         {children}
       </body>
     </html>

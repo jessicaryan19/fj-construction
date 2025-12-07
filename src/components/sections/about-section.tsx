@@ -45,6 +45,7 @@ export default function AboutSection() {
                                         src={`/about/image-${index + 1}.jpg`}
                                         alt={`About ${index + 1}`}
                                         className="object-cover object-center"
+                                        priority={index === 0}
                                         fill
                                     />
                                 </div>
