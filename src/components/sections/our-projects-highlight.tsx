@@ -35,7 +35,7 @@ export default function OurProjectsHighlight() {
                             />
                         </div>
 
-                        <div className="text-right">
+                        <div className="text-right z-10">
                             <h1 className="text-secondary font-medium">Umalas Bali</h1>
                             <div className="text-7xl text-secondary uppercase">Villa Radja</div>
                         </div>
