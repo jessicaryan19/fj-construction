@@ -54,7 +54,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto flex justify-between items-center py-4">
                 <Image
-                    src="/logo.svg"
+                    src="/fj-logo.svg"
                     alt="FJ Constructions"
                     width={125}
                     height={50}
