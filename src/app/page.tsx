@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/about-section";
+import BuildTogetherSection from "@/components/sections/build-together-section";
 import HeroSection from "@/components/sections/hero-section";
 import OfferExpertise from "@/components/sections/offer-expertise";
 import OurProjectsHighlight from "@/components/sections/our-projects-highlight";
@@ -14,11 +15,12 @@ export default function Home() {
         <AboutSection />
         <WhyUsSection />
         <OfferExpertise />
-        
-        <OurProjectsHighlight/>
+
+        <OurProjectsHighlight />
 
         <WhyPartnerSection />
         <WhatTheySay />
+        <BuildTogetherSection />
       </main>
     </div>
   );
