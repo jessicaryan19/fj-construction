@@ -11,7 +11,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
     return (
         <Card
             className="group rounded-3xl overflow-hidden relative h-64 bg-cover bg-center p-0"
-            style={{ backgroundImage: `url(/expertise/${image})` }}
+            style={{ backgroundImage: `url(/services/${image})` }}
         >
             <div
                 className="
@@ -19,7 +19,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                     scale-110 group-hover:scale-100
                     transition-transform duration-500
                 "
-                style={{ backgroundImage: `url(/expertise/${image})` }}
+                style={{ backgroundImage: `url(/services/${image})` }}
             />
             <div className="absolute inset-0 bg-black/60"/>
 

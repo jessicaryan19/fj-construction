@@ -3,9 +3,6 @@ import Image from "next/image";
 export default function ServicesIntroSection() {
     return (
         <div className="container">
-            <h1 className="text-primary">
-                Services
-            </h1>
             <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                 From private residences to large-scale commercial builds, we turn{" "}
 
@@ -43,13 +40,13 @@ export default function ServicesIntroSection() {
                     a space worth living, working, and investing in.
                 </span>
             </p>
-            <div className="flex justify-end">
+            <div className="relative w-screen -mx-[calc((100vw-100%)/2)]">
                 <Image
                     src="/star-long.svg"
                     alt="Star"
                     width={300}
                     height={80}
-                    className="object-contain"
+                    className="object-contain absolute right-0"
                 />
             </div>
         </div>
