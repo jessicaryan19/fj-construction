@@ -1,4 +1,4 @@
-export const testimonials = [{
+export const testimonialsData = [{
     name: "Mr. Ethan Hayes",
     parts: [{ bold: "Working with FJ Constructions was an absolute pleasure." },
         "Their transparency in costings and timelines, coupled with their consistent weekly updates, made the entire process stress-free. The quality of workmanship and the attention to detail in our villa far surpassed what we envisioned. For anyone planning a construction project in Bali, FJ Constructions is the team you want."]

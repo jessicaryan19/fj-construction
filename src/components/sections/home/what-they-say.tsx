@@ -5,7 +5,7 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "../../ui/c
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import ArrowButton from "../../buttons/arrow-button";
-import { testimonials } from "@/data/testimonials";
+import { testimonialsData } from "@/data/testimonials";
 
 export default function WhatTheySay() {
     const [api, setApi] = useState<CarouselApi>()
@@ -42,7 +42,7 @@ export default function WhatTheySay() {
                 <div className="flex flex-col pt-8">
                     <Carousel setApi={setApi} opts={{ loop: true }}>
                         <CarouselContent>
-                            {testimonials.map((testimonial) => (
+                            {testimonialsData.map((testimonial) => (
                                 <CarouselItem key={testimonial.name} className="flex gap-20 px-20 py-10 items-center">
                                     <div className="flex flex-col items-center justify-center w-1/5 gap-4">
                                         <div className="bg-white rounded-full">
@@ -68,7 +68,7 @@ export default function WhatTheySay() {
                     <div className="flex justify-center items-center gap-10">
                         <ArrowButton onClick={() => api?.scrollPrev()}/>
                         <div className="flex gap-2 justify-center">
-                            {testimonials.map((_, idx) => (
+                            {testimonialsData.map((_, idx) => (
                                 <span key={idx}
                                     className={`w-3 h-3 rounded-full transition-colors ${idx === current ? "bg-white" : "bg-white/30"
                                         }`}

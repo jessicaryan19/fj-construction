@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { projects } from "@/data/projects"
+import { projectsData } from "@/data/projects"
 import ArrowButton from "@/components/buttons/arrow-button"
 import { Button } from "@/components/ui/button"
 import SlidingButton from "@/components/buttons/sliding-button"
@@ -28,12 +28,12 @@ export default function ProjectSlideshow() {
 
     const paginate = (newDirection: number) => {
         setIndex(([prevIndex]) => [
-            (prevIndex + newDirection + projects.length) % projects.length,
+            (prevIndex + newDirection + projectsData.length) % projectsData.length,
             newDirection,
         ])
     }
 
-    const project = projects[index]
+    const project = projectsData[index]
 
     return (
         <div className="flex flex-col gap-5 w-full items-center">
@@ -138,7 +138,7 @@ export default function ProjectSlideshow() {
             </div>
 
             <div className="flex gap-2 justify-center">
-                {projects.map((_, idx) => (
+                {projectsData.map((_, idx) => (
                     <span key={idx}
                         className={`w-3 h-3 rounded-full transition-colors ${idx === index ? "bg-primary" : "bg-primary/30"
                             }`}

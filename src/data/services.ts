@@ -5,7 +5,7 @@ export type Service = {
     longDesc: string[];
 }
 
-export const services = [{
+export const servicesData = [{
     title: "Residential & Villa Construction",
     description: "Build your dream home with precision, premium materials, and lasting quality.",
     image: "residential.jpg",
@@ -65,7 +65,7 @@ export const services = [{
     ]
 }]
 
-export const whyBuildWithUs = [
+export const whyBuildWithUsData = [
     {
         title: "Guaranteed Quality",
         image: "quality.jpg",

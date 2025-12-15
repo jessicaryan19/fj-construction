@@ -1,4 +1,4 @@
-export const projects = [
+export const projectsData = [
     {
         id: "villa-radja",
         name: "Villa Radja",

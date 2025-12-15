@@ -1,7 +1,7 @@
 import ServiceClosing from "@/components/sections/services/service-closing";
 import ServicesIntroSection from "@/components/sections/services/service-intro-section";
 import ServiceItem from "@/components/sections/services/service-item";
-import { services } from "@/data/services";
+import { servicesData } from "@/data/services";
 
 export default function Services() {
     return (
@@ -14,7 +14,7 @@ export default function Services() {
                 </div>
 
                 <div className="flex flex-col gap-10">
-                    {services.map((service, index) => (
+                    {servicesData.map((service, index) => (
                         <ServiceItem key={service.title} service={service} index={index} />
                     ))}
                 </div>

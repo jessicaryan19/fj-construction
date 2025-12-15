@@ -1,4 +1,4 @@
-import { whyBuildWithUs } from "@/data/services"
+import { whyBuildWithUsData } from "@/data/services"
 import ImageRevealCard from "../../cards/image-reveal-card"
 
 export default function WhyBuildWithUs() {
@@ -7,7 +7,7 @@ export default function WhyBuildWithUs() {
             <h1 className="text-primary text-center">Why Build with Us?</h1>
             <div className="grid grid-cols-3 gap-8">
                 {
-                    whyBuildWithUs.map((item) => (
+                    whyBuildWithUsData.map((item) => (
                         <ImageRevealCard
                             key={item.title}
                             image={item.image}
