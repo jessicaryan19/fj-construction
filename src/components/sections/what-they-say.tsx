@@ -4,6 +4,7 @@ import Line from "../ui/line";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "../ui/carousel";
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
+import ArrowButton from "../buttons/arrow-button";
 
 export default function WhatTheySay() {
     const testimonials = [{
@@ -94,11 +95,7 @@ export default function WhatTheySay() {
                     </Carousel>
 
                     <div className="flex justify-center items-center gap-10">
-                        <Icon
-                            icon="iconamoon:arrow-left-6-circle-light"
-                            className="text-4xl text-white z-10"
-                            onClick={() => api?.scrollPrev()}
-                        />
+                        <ArrowButton onClick={() => api?.scrollPrev()}/>
                         <div className="flex gap-2 justify-center">
                             {testimonials.map((_, idx) => (
                                 <span key={idx}
@@ -107,11 +104,7 @@ export default function WhatTheySay() {
                                 />
                             ))}
                         </div>
-                        <Icon
-                            icon="iconamoon:arrow-right-6-circle-light"
-                            className="text-4xl text-white z-10"
-                            onClick={() => api?.scrollNext()}
-                        />
+                        <ArrowButton direction="right" onClick={() => api?.scrollNext()}/>
                     </div>
                 </div>
             </div>

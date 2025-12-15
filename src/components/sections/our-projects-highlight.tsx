@@ -1,7 +1,8 @@
-import { Icon } from "@iconify/react";
+"use client"
 import Image from "next/image";
 import Line from "../ui/line";
 import SlidingButton from "../buttons/sliding-button";
+import ArrowButton from "../buttons/arrow-button";
 
 export default function OurProjectsHighlight() {
     return (
@@ -27,15 +28,11 @@ export default function OurProjectsHighlight() {
 
                     <div className="flex flex-col gap-10 w-full pe-12">
                         <div className="flex justify-between items-center gap-6 p-6">
-                            <Icon
-                                icon="iconamoon:arrow-left-6-circle-light"
-                                className="text-4xl text-white z-10"
-                            />
-                            <Icon
-                                icon="iconamoon:arrow-right-6-circle-light"
-                                className="text-4xl text-white z-10"
-                            />
-                            <SlidingButton text="View All Projects" type="inverted"/>
+                            <div className="flex gap-4">
+                                <ArrowButton onClick={() => { }} />
+                                <ArrowButton direction="right" onClick={() => { }} />
+                            </div>
+                            <SlidingButton text="View All Projects" type="inverted" />
                         </div>
 
                         <div className="text-right z-10">

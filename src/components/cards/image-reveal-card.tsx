@@ -16,7 +16,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
             <div
                 className="
                     absolute inset-0 bg-cover bg-center 
-                    scale-100 group-hover:scale-105
+                    scale-110 group-hover:scale-100
                     transition-transform duration-500
                 "
                 style={{ backgroundImage: `url(/expertise/${image})` }}
