@@ -1,3 +1,4 @@
+import SlidingButton from "@/components/buttons/sliding-button";
 import AboutSection from "@/components/sections/about-section";
 import BuildTogetherSection from "@/components/sections/build-together-section";
 import HeroSection from "@/components/sections/hero-section";
@@ -14,6 +15,8 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <WhyUsSection />
+
+        <SlidingButton text="Get to Know Us More" type="primary"/>
         <OfferExpertise />
 
         <OurProjectsHighlight />
