@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Adamina } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/layout/navigation-bar";
+import Footer from "@/components/layout/footer";
 
 const adamina = Adamina({
   variable: "--font-adamina",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <NavigationBar />
         </div>
         {children}
+        <Footer/>
       </body>
     </html>
   );

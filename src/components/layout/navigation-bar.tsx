@@ -3,15 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-
-const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Projects", href: "/" },
-    { name: "Partnership", href: "/" },
-    { name: "Contact Us", href: "/" },
-];
+import { routes } from "@/data/routes";
 
 export default function Navbar() {
     const [active, setActive] = useState("Home");
@@ -58,7 +50,7 @@ export default function Navbar() {
                 />
 
                 <ul className="flex gap-10 relative">
-                    {menuItems.map((item) => (
+                    {routes.map((item) => (
                         <li key={item.name} className="relative">
                             <Link
                                 href={item.href}
