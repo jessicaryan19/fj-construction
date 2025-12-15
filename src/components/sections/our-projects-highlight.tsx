@@ -1,15 +1,17 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Line from "../ui/line";
+import SlidingButton from "../buttons/sliding-button";
 
 export default function OurProjectsHighlight() {
     return (
-        <div className="flex flex-col gap-20 w-full items-center py-20">
+        <div className="flex flex-col gap-20 w-full items-center">
             <div className="flex gap-4 items-center container">
                 <Image src="/star.svg" alt="Star" width={40} height={40} />
                 <h1 className="text-primary">Our Projects</h1>
                 <Line />
             </div>
+
             <div className="w-full h-full flex">
                 <div className="relative bg-primary w-2/3">
                     <div className="absolute inset-0 opacity-20">
@@ -33,6 +35,7 @@ export default function OurProjectsHighlight() {
                                 icon="iconamoon:arrow-right-6-circle-light"
                                 className="text-4xl text-white z-10"
                             />
+                            <SlidingButton text="View All Projects" type="inverted"/>
                         </div>
 
                         <div className="text-right z-10">

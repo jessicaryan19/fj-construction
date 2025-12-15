@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import FeatureCard from "../common/feature-card";
+import FeatureCard from "../cards/feature-card";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Line from "../ui/line";
@@ -25,7 +25,7 @@ export default function AboutSection() {
     }]
 
     return (
-        <div className="flex gap-14 w-full container py-20">
+        <div className="flex gap-14 w-full container">
             <div className="flex-none w-1/3 rounded-3xl overflow-hidden bg-white">
                 <Carousel
                     className="h-full w-full"

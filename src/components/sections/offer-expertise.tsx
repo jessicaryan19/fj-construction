@@ -1,4 +1,4 @@
-import ImageRevealCard from "../common/image-reveal-card"
+import ImageRevealCard from "../cards/image-reveal-card"
 
 export default function OfferExpertise() {
     const expertise = [{
@@ -28,7 +28,7 @@ export default function OfferExpertise() {
     }]
 
     return (
-        <div className="container flex flex-col gap-20 py-20">
+        <div className="container flex flex-col gap-20">
             <h1 className="text-primary text-center">We Offer Expertise Accross:</h1>
             <div className="grid grid-cols-3 gap-8">
                 {

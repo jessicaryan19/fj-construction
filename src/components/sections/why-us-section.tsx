@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import FeatureCard from "../common/feature-card";
+import FeatureCard from "../cards/feature-card";
 
 export default function WhyUsSection() {
     const reasons = [
@@ -12,7 +12,7 @@ export default function WhyUsSection() {
     ];
 
     return (
-        <div className="relative bg-primary w-full flex items-center justify-center p-20">
+        <div className="relative bg-primary w-full flex items-center justify-center py-20">
             <div className="absolute inset-0 opacity-20">
                 <Image
                     src="/texture.jpg"

@@ -49,7 +49,7 @@ export default function WhatTheySay() {
     }, [api])
 
     return (
-        <div className="container flex flex-col gap-20 py-20">
+        <div className="container flex flex-col gap-20">
             <div className="flex gap-4 items-center">
                 <Line />
                 <h1 className="text-primary">What they say about us</h1>

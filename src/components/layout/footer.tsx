@@ -1,5 +1,5 @@
 "use client";
-import { routes } from "@/data/routes";
+import { externalLinks, routes } from "@/data/routes";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,10 +12,10 @@ export default function Footer() {
             <div className="flex flex-col items-center gap-4">
                 <Image src='/logo/logo-2-primary.svg' alt="FJ Constructions" width={125} height={50} />
                 <div className="flex items-center gap-8">
-                    <Link href="https://www.instagram.com/fjconstructionsbali?igsh=MWs5aTg1bDRiYmU3ZA==" className="border border-primary p-1 rounded-full">
+                    <Link href={externalLinks.instagram} className="border border-primary p-1 rounded-full">
                         <Icon icon="iconoir:instagram" className="text-2xl text-primary" />
                     </Link>
-                    <Link href="https://www.linkedin.com/company/ferry-jaya-constructions/" className="border border-primary p-1 rounded-full">
+                    <Link href={externalLinks.linkedin} className="border border-primary p-1 rounded-full">
                         <Icon icon="mdi:linkedin" className="text-2xl text-primary" />
                     </Link>
                 </div>
@@ -42,8 +42,8 @@ export default function Footer() {
                     <div className="flex py-5">
                         <p className="uppercase font-bold w-1/4">Contact Us On</p>
                         <div className="flex flex-1 gap-10">
-                            <Link href="mailto:constructions.fjc@gmail.com" className="underline">constructions.fjc@gmail.com</Link>
-                            <Link href="https://wa.me/6281944220801" className="underline">+62 819 4422 0801</Link>
+                            <Link href={externalLinks.email} className="underline">constructions.fjc@gmail.com</Link>
+                            <Link href={externalLinks.whatsapp} className="underline">+62 819 4422 0801</Link>
                         </div>
                     </div>
                     <p>Copyright ©️ 2025 FJ Construction. All Rights Reserved.</p>

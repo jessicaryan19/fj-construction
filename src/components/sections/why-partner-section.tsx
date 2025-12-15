@@ -1,4 +1,4 @@
-import MergeIconCard from "../common/merge-icon-card"
+import MergeIconCard from "../cards/merge-icon-card"
 
 export default function WhyPartnerSection() {
     const reasons = [{
@@ -20,7 +20,7 @@ export default function WhyPartnerSection() {
     }]
 
     return (
-        <div className="container flex flex-col gap-20 py-20">
+        <div className="container flex flex-col gap-20">
             <h1 className="text-primary text-center">Why Partner with Us?</h1>
             <div className="grid grid-cols-4 gap-8">
                 {
