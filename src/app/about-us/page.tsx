@@ -1,4 +1,5 @@
 import AboutUsSection from "@/components/sections/about-us/about-us-section";
+import WhyBuildWithUs from "@/components/sections/about-us/why-build-with-us.section";
 import WhyUsSection from "@/components/sections/about-us/why-us-section";
 import YourProjectDeserveTheBest from "@/components/sections/about-us/your-project-deserve-the-best";
 
@@ -13,8 +14,9 @@ export default function AboutUs() {
                 </div>
 
                 <WhyUsSection/>
+                <WhyBuildWithUs/>
+
                 <YourProjectDeserveTheBest/>
-                
             </main>
         </div>
     )

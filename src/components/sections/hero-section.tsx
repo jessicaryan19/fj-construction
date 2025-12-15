@@ -14,7 +14,7 @@ export default function HeroSection() {
 
             <div className="absolute inset-0 bg-black/50" />
             <div className="relative z-10 flex flex-col justify-end h-full gap-10 pb-64">
-                <h1 className="text-white w-1/2 leading-tight">Your Partner in Reliable Constructions.</h1>
+                <h1 className="text-white text-7xl w-3/4 leading-tight">Your Partner in Reliable Constructions.</h1>
                 <SlidingButton text="View Projects" href="/projects"/>
             </div>
         </div>

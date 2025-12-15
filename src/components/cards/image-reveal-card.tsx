@@ -27,6 +27,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                 <h3 className="text-center">
                     {title}
                 </h3>
+                
                 <div className="flex flex-col gap-2 items-center">
                     <Icon
                         icon="iconamoon:arrow-up-6-circle-light"
@@ -39,9 +40,11 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                             className="
                                 text-center opacity-0 
                                 translate-y-4
+                                max-h-12 overflow-hidden
                                 transition-all duration-500
                                 group-hover:opacity-100 
                                 group-hover:translate-y-1
+                                group-hover:max-h-40
                             "
                         >
                             {description}

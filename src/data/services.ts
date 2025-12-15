@@ -64,3 +64,21 @@ export const services = [{
         "from start to finish for full confidence and control."
     ]
 }]
+
+export const whyBuildWithUs = [
+    {
+        title: "Guaranteed Quality",
+        image: "quality.jpg",
+        description: "Every project we handle is built with precision, premium materials, and strict quality control. Our commitment is to deliver long-lasting results that exceed expectations."
+    },
+    {
+        title: "Expert Team",
+        image: "expert.jpg",
+        description: "Our team consists of skilled engineers, architects, and project managers with years of experience in the industry. Together, we bring expertise, innovation, and professionalism to every project."
+    },
+    {
+        title: "Reliability & Deadlines",
+        image: "reliability.jpg",
+        description: "Time is crucial in construction. We take pride in our consistency to deliver on schedule, maintaining efficiency without compromising quality. "
+    }
+]

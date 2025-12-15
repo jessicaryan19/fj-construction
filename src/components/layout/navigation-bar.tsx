@@ -9,7 +9,7 @@ export default function Navbar() {
     const [active, setActive] = useState("Home");
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [isAboveHero, setIsAboveHero] = useState(true);
+    const [isAboveHero, setIsAboveHero] = useState(false);
 
     useEffect(() => {
         const heroSection = document.getElementById("hero-section");
