@@ -7,7 +7,7 @@ import Image from "next/image";
 const menuItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/" },
-    { name: "Services", href: "/" },
+    { name: "Services", href: "/services" },
     { name: "Projects", href: "/" },
     { name: "Partnership", href: "/" },
     { name: "Contact Us", href: "/" },
@@ -24,16 +24,12 @@ export default function Navbar() {
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
-            // Hide on scroll down, show on scroll up
             if (currentScrollY > lastScrollY && currentScrollY > 50) {
                 setShow(false);
             } else {
                 setShow(true);
             }
             setLastScrollY(currentScrollY);
-
-            // Check if scroll is above Hero
             if (heroSection) {
                 const heroBottom = heroSection.offsetHeight;
                 setIsAboveHero(currentScrollY < heroBottom);
@@ -54,7 +50,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto flex justify-between items-center py-4">
                 <Image
-                    src="/fj-logo.svg"
+                    src={isAboveHero ? "/logo/logo-white.svg" : "/logo/logo-primary.svg"}
                     alt="FJ Constructions"
                     width={125}
                     height={50}

@@ -11,7 +11,7 @@ export default function HeroSection() {
                 priority
             />
 
-            <div className="absolute inset-0 bg-black/50"/>
+            <div className="absolute inset-0 bg-black/50" />
             <div className="relative z-10 flex flex-col justify-center h-full">
                 <h1 className="text-white w-1/2 leading-tight">Your Partner in Reliable Constructions.</h1>
             </div>
