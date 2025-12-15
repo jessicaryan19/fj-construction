@@ -1,11 +1,11 @@
 import SlidingButton from "@/components/buttons/sliding-button";
 import AboutUsSection from "@/components/sections/about-us/about-us-section";
-import BuildTogetherSection from "@/components/sections/build-together-section";
+import BuildTogetherSection from "@/components/sections/home/build-together-section";
 import HeroSection from "@/components/sections/hero-section";
-import OfferExpertise from "@/components/sections/offer-expertise";
-import OurProjectsHighlight from "@/components/sections/our-projects-highlight";
-import WhatTheySay from "@/components/sections/what-they-say";
-import WhyPartnerSection from "@/components/sections/why-partner-section";
+import OfferExpertise from "@/components/sections/about-us/offer-expertise";
+import OurProjectsHighlight from "@/components/sections/home/our-projects-highlight";
+import WhatTheySay from "@/components/sections/home/what-they-say";
+import WhyPartnerSection from "@/components/sections/home/why-partner-section";
 import WhyUsSection from "@/components/sections/about-us/why-us-section";
 
 export default function Home() {

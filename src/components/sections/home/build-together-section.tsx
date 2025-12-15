@@ -1,7 +1,7 @@
 import Image from "next/image";
-import SlidingButton from "../buttons/sliding-button";
+import SlidingButton from "../../buttons/sliding-button";
 import { externalLinks } from "@/data/routes";
-import ImageOverlayCard from "../cards/image-overlay-card";
+import ImageOverlayCard from "../../cards/image-overlay-card";
 
 export default function BuildTogetherSection() {
     return (

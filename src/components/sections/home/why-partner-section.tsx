@@ -1,4 +1,4 @@
-import MergeIconCard from "../cards/merge-icon-card"
+import MergeIconCard from "../../cards/merge-icon-card"
 
 export default function WhyPartnerSection() {
     const reasons = [{

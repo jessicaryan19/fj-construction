@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
-import Line from "../ui/line"
-import ProjectSlideshow from "./projects/project-slideshow"
+import Line from "../../ui/line"
+import ProjectSlideshow from "../projects/project-slideshow"
 
 export default function OurProjectsHighlight() {
     return (

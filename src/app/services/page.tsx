@@ -1,4 +1,4 @@
-import ServicesIntroSection from "@/components/sections/service-intro-section";
+import ServicesIntroSection from "@/components/sections/services/service-intro-section";
 import Image from "next/image";
 
 export default function Services() {
