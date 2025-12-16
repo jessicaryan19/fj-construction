@@ -10,12 +10,13 @@ export default function ImageOverlayCard({
     image
 }: ImageOverlayCardProps) {
     return (
-        <div className="relative container w-full h-144 rounded-3xl overflow-hidden">
+        <div className="group relative container w-full h-144 rounded-3xl overflow-hidden">
             <Image
                 src={image}
                 alt=""
                 fill
                 style={{ objectFit: "cover" }}
+                className="group-hover:scale-105 transition-all duration-500"
                 priority
             />
             <div className="absolute inset-0 bg-black/50" />

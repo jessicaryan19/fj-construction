@@ -88,7 +88,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="grid grid-cols-[1fr_auto_1fr] gap-10 pt-24 items-center relative"
           >
             <div className={index % 2 === 0 ? "flex justify-end" : "opacity-0"}>
-              <div className={`max-w-md flex items-center transition-opacity text-primary ${activeIndex === index ? "opacity-100" : "opacity-50"}`}>
+              <div className="max-w-md flex items-center transition-opacity text-primary">
                 <h3 className="font-medium p-4 border-r-2 border-primary text-right">{item.title}</h3>
                 <h1 className="font-medium p-4">{index + 1}</h1>
                 {item.content}
@@ -122,7 +122,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className={index % 2 === 1 ? "flex justify-start" : "opacity-0"}>
-              <div className={`max-w-md flex items-center transition-opacity font-medium text-primary ${activeIndex === index ? "opacity-100" : "opacity-50"}`} >
+              <div className="max-w-md flex items-center transition-opacity font-medium text-primary" >
                 <h1 className="font-medium p-4">{index + 1}</h1>
                 <h3 className="font-medium p-4 border-l-2 border-primary">
                   {item.title}

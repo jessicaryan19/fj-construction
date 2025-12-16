@@ -10,7 +10,7 @@ interface ImageRevealCardProps {
 export default function ImageRevealCard({ image, title, description }: ImageRevealCardProps) {
     return (
         <Card
-            className="group rounded-3xl overflow-hidden relative h-64 bg-cover bg-center p-0"
+            className="group rounded-3xl overflow-hidden relative h-64 bg-cover bg-center p-0 cursor-pointer"
             style={{ backgroundImage: `url(/services/${image})` }}
         >
             <div
