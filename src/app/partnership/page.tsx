@@ -6,7 +6,6 @@ import PartnershipForm from "@/components/sections/partnership/partnership-form"
 import PartnershipBenefits from "@/components/sections/partnership/partnership-benefits";
 
 export default function Partnership() {
-    
     return (
         <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
             <main className="min-h-screen w-full flex flex-col gap-32 pt-40 pb-10 items-center bg-white dark:bg-black">
@@ -20,7 +19,6 @@ export default function Partnership() {
                 <PartnershipTimeline/>
 
                 <TestimonialsSection/>
-
                 <PartnershipForm/>
             </main>
         </div>

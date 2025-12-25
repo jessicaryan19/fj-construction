@@ -10,7 +10,7 @@ export default function ImageBackground({
     children
 }: ImageBackgroundProps) {
     return (
-        <div className="relative w-full">
+        <div className="relative w-full" id="hero-section">
             <Image
                 src={image}
                 alt="Background"

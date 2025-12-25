@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SlidingButton from "../../buttons/sliding-button";
-import { externalLinks } from "@/data/routes";
+import { socialsData } from "@/data/routes";
 import ImageCTE from "../../cards/image-cte";
 
 export default function BuildTogetherSection() {
@@ -15,7 +15,7 @@ export default function BuildTogetherSection() {
                 <h1 className="text-white">Join us in shaping Bali’s</h1>
                 <h1 className="text-white">future developments.</h1>
             </div>
-            <SlidingButton text="Start Your Project" href={externalLinks.whatsapp} />
+            <SlidingButton text="Start Your Project" href={socialsData.whatsapp.link} />
         </ImageCTE>
     )
 }
