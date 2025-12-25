@@ -6,7 +6,7 @@ export default function ProjectClosing() {
         <ImageOverlayCard image="/services/handshake.jpg">
             <h1 className="text-white text-7xl">Your Vision, Our Expertise.</h1>
             <h1 className="text-white">Strong foundations start with strong partnerships.</h1>
-            <SlidingButton text="Explore Partnership Opportunities" href="/partnerships" />
+            <SlidingButton text="Explore Partnership Opportunities" href="/partnership" />
         </ImageOverlayCard>
     )
 }

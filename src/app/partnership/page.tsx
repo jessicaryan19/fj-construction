@@ -3,6 +3,7 @@ import WhatTheySay from "@/components/sections/home/what-they-say";
 import HowWeWillWorkTogether from "@/components/sections/partnership/how-we-will-work-together";
 import OurPartnershipModels from "@/components/sections/partnership/our-partnership-model";
 import PartnershipSection from "@/components/sections/partnership/partnership-section";
+import PartnershipForm from "@/components/sections/partnership/partnership-form";
 import { benefits } from "@/data/services";
 
 export default function Partnership() {
@@ -34,6 +35,7 @@ export default function Partnership() {
                 <OurPartnershipModels/>
                 <HowWeWillWorkTogether/>
                 <WhatTheySay/>
+                <PartnershipForm/>
             </main>
         </div>
     )
