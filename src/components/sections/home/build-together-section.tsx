@@ -1,11 +1,11 @@
 import Image from "next/image";
 import SlidingButton from "../../buttons/sliding-button";
 import { externalLinks } from "@/data/routes";
-import ImageOverlayCard from "../../cards/image-overlay-card";
+import ImageCTE from "../../cards/image-cte";
 
 export default function BuildTogetherSection() {
     return (
-        <ImageOverlayCard image="/about/image-2.jpg">
+        <ImageCTE image="/about/image-2.jpg">
             <div className="flex flex-row gap-4">
                 <Image src="/star-white.svg" alt="Star" width={40} height={40} />
                 <h1 className="text-white text-7xl uppercase">Lets Build Together</h1>
@@ -16,6 +16,6 @@ export default function BuildTogetherSection() {
                 <h1 className="text-white">future developments.</h1>
             </div>
             <SlidingButton text="Start Your Project" href={externalLinks.whatsapp} />
-        </ImageOverlayCard>
+        </ImageCTE>
     )
 }

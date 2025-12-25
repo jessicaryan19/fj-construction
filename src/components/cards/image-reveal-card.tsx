@@ -10,8 +10,8 @@ interface ImageRevealCardProps {
 export default function ImageRevealCard({ image, title, description }: ImageRevealCardProps) {
     return (
         <Card
-            className="group rounded-3xl overflow-hidden relative h-64 bg-cover bg-center p-0 cursor-pointer"
-            style={{ backgroundImage: `url(/services/${image})` }}
+            className="group rounded-3xl overflow-hidden relative aspect-video bg-cover bg-center p-0 cursor-pointer"
+            style={{ backgroundImage: `url(${image})` }}
         >
             <div
                 className="
@@ -19,7 +19,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                     scale-110 group-hover:scale-100
                     transition-transform duration-500
                 "
-                style={{ backgroundImage: `url(/services/${image})` }}
+                style={{ backgroundImage: `url(${image})` }}
             />
             <div className="absolute inset-0 bg-black/60"/>
 

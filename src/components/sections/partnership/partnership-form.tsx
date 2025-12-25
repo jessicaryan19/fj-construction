@@ -20,6 +20,7 @@ export default function PartnershipForm() {
         {id: 'exclusive-contractor', value: 'Exclusive Contractor Partnership (long-term/multiple builds)'},
         {id: 'general-discussion', value: 'General Discussion/Introduction'},
     ]
+    
     return (
         <ImageBackground image="/projects/villa-goa-gong/slideshow-secondary.png">
             <div className="flex justify-center items-center py-20">
