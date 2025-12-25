@@ -82,3 +82,46 @@ export const whyBuildWithUsData = [
         description: "Time is crucial in construction. We take pride in our consistency to deliver on schedule, maintaining efficiency without compromising quality. "
     }
 ]
+
+export const benefits = [
+    {
+        title: "Developers",
+        image: "quality.jpg",
+        description: "Faster project turnaround. Reduced operation burden. Clear documentation & SOPs. Competitive costing."
+    },
+    {
+        title: "Architects",
+        image: "expert.jpg",
+        description: "Flawless design execution. On-site supervision aligned with design intent. Credit visibility in project promotions."
+    },
+    {
+        title: "Real Estate & Property Agencies",
+        image: "reliability.jpg",
+        description: "Trusted builder recommendations = client satisfaction. Commision-based referral (3%). Joint portfolio exposure through social media."
+    },
+    {
+        title: "Business Growth Support",
+        image: "reliability.jpg",
+        description: "Featured in joint marketing (Instagram, website, brochures). Access to priority scheduling for ongoing/upcoming projects. Invitation to networking and partner-exclusive events. Shared exposure through co-branding on completed projects and social media features."
+    }
+]
+
+export const whyPartnerWithUsData = [
+    {
+        title: "Developers",
+        description: "Reliable execution from concept to completion",
+        icon: "mdi:worker"
+    }, {
+        title: "Architects",
+        description: "Turning designs into precise, high-quality builds",
+        icon: "ic:baseline-architecture"
+    }, {
+        title: "Real Estate Agencies",
+        description: "Providing trusted contractors for clients",
+        icon: "material-symbols:real-estate-agent-rounded"
+    }, {
+        title: "Property Managers",
+        description: "Ensuring smooth renovation and maintenance",
+        icon: "icomoon-free:user-tie"
+    }
+]

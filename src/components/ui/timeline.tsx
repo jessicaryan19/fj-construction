@@ -2,12 +2,12 @@
 
 import { Icon } from "@iconify/react";
 import { motion, useScroll, useTransform } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
   title: string;
   icon: string;
-  content?: React.ReactNode;
+  description?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -18,13 +18,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
 
-  /* Measure timeline height */
   useEffect(() => {
     if (!contentRef.current) return;
     setHeight(contentRef.current.getBoundingClientRect().height);
   }, [data]);
 
-  /* Scroll progress */
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
@@ -33,7 +31,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
-  /* 🔑 PERFECT SYNC ACTIVE NODE */
   useEffect(() => {
     const unsubscribe = heightTransform.on("change", (h) => {
       let current: number | undefined = undefined;
@@ -89,9 +86,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             <div className={index % 2 === 0 ? "flex justify-end" : "opacity-0"}>
               <div className="max-w-md flex items-center transition-opacity text-primary">
-                <h3 className="font-medium p-4 border-r-2 border-primary text-right">{item.title}</h3>
+                <div className="flex flex-col gap-2 p-4 border-r-2 border-primary">
+                  <h3 className="text-right">{item.title}</h3>
+                  <p className="text-right">{item.description}</p>
+                </div>
                 <h1 className="font-medium p-4">{index + 1}</h1>
-                {item.content}
               </div>
             </div>
 
@@ -124,10 +123,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className={index % 2 === 1 ? "flex justify-start" : "opacity-0"}>
               <div className="max-w-md flex items-center transition-opacity font-medium text-primary" >
                 <h1 className="font-medium p-4">{index + 1}</h1>
-                <h3 className="font-medium p-4 border-l-2 border-primary">
-                  {item.title}
-                </h3>
-                {item.content}
+                <div className="flex flex-col gap-2 p-4 border-l-2 border-primary">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
               </div>
             </div>
           </div>
