@@ -88,9 +88,11 @@ export default function Navbar() {
 
                             {active === item.name && (
                                 <motion.div
-                                    layoutId="underline"
-                                    className={`absolute left-0 bottom-0 mt-2 w-full h-0.5 rounded ${isAboveHero ? "bg-white" : "bg-primary"
+                                    className={`absolute left-0 -bottom-1 w-full h-0.5 rounded ${isAboveHero ? "bg-white" : "bg-primary"
                                         }`}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.2 }}
                                 />
                             )}
                         </li>
