@@ -9,8 +9,8 @@ interface FeatureCardProps {
 }
 export default function FeatureCard({ icon, title, description, orientation = "horizontal" }: FeatureCardProps) {
     const borderStyle = {
-        horizontal: "border-l-8 border-l-secondary rounded-3xl",
-        vertical: "border-t-8 border-t-secondary rounded-3xl justify-center"
+        horizontal: "border-l-8 border-l-secondary rounded-3xl h-full",
+        vertical: "border-t-8 border-t-secondary rounded-3xl justify-center h-full"
     }[orientation];
 
     const cardContentStyle = {

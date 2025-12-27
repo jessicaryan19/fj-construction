@@ -1,7 +1,7 @@
+import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 import ImageRoundedCard from "@/components/cards/image-rounded-card";
 import RichTextRenderer from "@/components/ui/rich-text";
 import { Project, ProjectContentBlock } from "@/data/projects";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface ProjectContentRendererProps {
@@ -13,20 +13,27 @@ export default function ProjectContentRenderer({
     project,
     content,
 }: ProjectContentRendererProps) {
+
+    let children = <TextContent project={project} content={content} />
     if (content.type === "two-image-one-desc") {
-        return <TwoImageOneDesc project={project} content={content} />
+        children = <TwoImageOneDesc project={project} content={content} />
     } else if (content.type === "image-text-left" || content.type === "image-text-right") {
-        return <ImageTextContent project={project} content={content} />
+        children = <ImageTextContent project={project} content={content} />
     } else if (content.type === "one-image") {
-        return <OneImage project={project} content={content} />
+        children = <OneImage project={project} content={content} />
     } else if (content.type === "two-image" || content.type === "two-image-flip") {
-        return <TwoImage project={project} content={content} />
+        children = <TwoImage project={project} content={content} />
     } else if (content.type === "three-image") {
-        return <ThreeImage project={project} content={content} />
+        children = <ThreeImage project={project} content={content} />
     } else if (content.type === "circle-text") {
-        return <CircleText project={project} content={content} />
+        children = <CircleText project={project} content={content} />
     }
-    return <TextContent project={project} content={content} />
+
+    return (
+        <VerticalFadeIn>
+            {children}
+        </VerticalFadeIn>
+    )
 }
 
 function TwoImageOneDesc({

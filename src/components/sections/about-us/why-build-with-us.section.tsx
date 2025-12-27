@@ -1,5 +1,6 @@
 import { whyBuildWithUsData } from "@/data/services"
 import ImageRevealCard from "../../cards/image-reveal-card"
+import VerticalFadeIn from "@/components/animations/vertical-fade-in"
 
 export default function WhyBuildWithUs() {
     return (
@@ -7,13 +8,14 @@ export default function WhyBuildWithUs() {
             <h1 className="text-primary text-center">Why Build with Us?</h1>
             <div className="grid grid-cols-3 gap-8">
                 {
-                    whyBuildWithUsData.map((item) => (
-                        <ImageRevealCard
-                            key={item.title}
-                            image={item.image}
-                            title={item.title}
-                            description={item.description}
-                        />
+                    whyBuildWithUsData.map((item, index) => (
+                        <VerticalFadeIn key={item.title} delay={index * 0.1}>
+                            <ImageRevealCard
+                                image={item.image}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        </VerticalFadeIn>
                     ))
                 }
             </div>

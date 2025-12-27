@@ -4,6 +4,7 @@ import FeatureCard from "../../cards/feature-card";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Line from "../../ui/line";
+import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 
 export default function AboutUsSection() {
     const coreStrengths = [{
@@ -27,38 +28,41 @@ export default function AboutUsSection() {
     return (
         <div className="flex gap-14 w-full container">
             <div className="flex-none w-1/3 rounded-3xl overflow-hidden bg-white">
-                <Carousel
-                    className="h-full w-full"
-                    opts={{ loop: true }}
-                    plugins={[
-                        Autoplay({
-                            delay: 2500,
-                            stopOnInteraction: false,
-                        }),
-                    ]}
-                >
-                    <CarouselContent className="h-full">
-                        {Array.from({ length: 5 }).map((_, index) => (
-                            <CarouselItem key={index} className="p-0 h-full">
-                                <div className="relative w-full h-full">
-                                    <Image
-                                        src={`/about/image-${index + 1}.jpg`}
-                                        alt={`About ${index + 1}`}
-                                        className="object-cover object-center"
-                                        priority={index === 0}
-                                        fill
-                                    />
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
+                <VerticalFadeIn className="w-full h-full">
+                    <Carousel
+                        className="h-full w-full"
+                        opts={{ loop: true }}
+                        plugins={[
+                            Autoplay({
+                                delay: 2500,
+                                stopOnInteraction: false,
+                            }),
+                        ]}
+                    >
+                        <CarouselContent className="h-full">
+                            {Array.from({ length: 5 }).map((_, index) => (
+                                <CarouselItem key={index} className="p-0 h-full">
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={`/about/image-${index + 1}.jpg`}
+                                            alt={`About ${index + 1}`}
+                                            className="object-cover object-center"
+                                            priority={index === 0}
+                                            fill
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
+                </VerticalFadeIn>
+
             </div>
 
             <div className="flex-1 flex flex-col gap-12 text-primary h-full">
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-4 items-center">
-                        <Image src="//svg-art/flower.svg" alt="Star" width={40} height={40} />
+                        <Image src="/svg-art/flower.svg" alt="Star" width={40} height={40} />
                         <h1>FJ Constructions</h1>
                         <Line />
                     </div>
@@ -68,13 +72,14 @@ export default function AboutUsSection() {
                 <h3>Our Core Strengths:</h3>
                 <div className="grid grid-cols-2 gap-8">
                     {
-                        coreStrengths.map((strength) => (
-                            <FeatureCard
-                                key={strength.title}
-                                icon={strength.icon}
-                                title={strength.title}
-                                description={strength.description}
-                            />
+                        coreStrengths.map((strength, index) => (
+                            <VerticalFadeIn key={strength.title} delay={index * 0.1}>
+                                <FeatureCard
+                                    icon={strength.icon}
+                                    title={strength.title}
+                                    description={strength.description}
+                                />
+                            </VerticalFadeIn>
                         ))
                     }
                 </div>
