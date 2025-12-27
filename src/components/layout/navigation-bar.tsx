@@ -18,7 +18,7 @@ export default function Navbar() {
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isAboveHero, setIsAboveHero] = useState(() => {
-        return pathname === "/" || pathname.startsWith("/projects/");
+        return pathname === "/" || pathname.startsWith("/projects/") || pathname === "/contact-us";
     });
     const [isNavigating, setIsNavigating] = useState(false);
 
@@ -36,7 +36,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const heroSection = document.getElementById("hero-section");
-        if ((heroSection && pathname === "/") || pathname.startsWith("/projects/")) {
+        if ((heroSection && pathname === "/") || pathname.startsWith("/projects/") || pathname === "/contact-us") {
             const heroBottom = heroSection?.offsetHeight || window.innerHeight;
             setIsAboveHero(window.scrollY < heroBottom);
         } else {
@@ -55,7 +55,7 @@ export default function Navbar() {
                 setShow(true);
             }
             setLastScrollY(currentScrollY);
-            if ((heroSection && pathname === "/") || pathname.startsWith("/projects/")) {
+            if ((heroSection && pathname === "/") || pathname.startsWith("/projects/") || pathname === "/contact-us") {
                 const heroBottom = heroSection?.offsetHeight || window.innerHeight;
                 setIsAboveHero(currentScrollY < heroBottom);
             } else {
