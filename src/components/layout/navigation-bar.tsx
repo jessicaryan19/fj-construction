@@ -10,25 +10,34 @@ export default function Navbar() {
     const pathname = usePathname();
     const [active, setActive] = useState(() => {
         const currentRoute = routes.find((route) => route.href === pathname);
+        if (pathname.startsWith("/projects/")) {
+            return "Projects";
+        }
         return currentRoute ? currentRoute.name : "Home";
     });
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [isAboveHero, setIsAboveHero] = useState(false);
+    const [isAboveHero, setIsAboveHero] = useState(() => {
+        return pathname === "/" || pathname.startsWith("/projects/");
+    });
+    const [isNavigating, setIsNavigating] = useState(false);
 
-    // Update active tab when pathname changes
     useEffect(() => {
+        setIsNavigating(true);
         const currentRoute = routes.find((route) => route.href === pathname);
-        if (currentRoute) {
+        if (pathname.startsWith("/projects/")) {
+            setActive("Projects");
+        } else if (currentRoute) {
             setActive(currentRoute.name);
         }
+        const timer = setTimeout(() => setIsNavigating(false), 300);
+        return () => clearTimeout(timer);
     }, [pathname]);
 
-    // Check initial scroll position and hero section
     useEffect(() => {
         const heroSection = document.getElementById("hero-section");
-        if (heroSection && pathname === "/") {
-            const heroBottom = heroSection.offsetHeight;
+        if ((heroSection && pathname === "/") || pathname.startsWith("/projects/")) {
+            const heroBottom = heroSection?.offsetHeight || window.innerHeight;
             setIsAboveHero(window.scrollY < heroBottom);
         } else {
             setIsAboveHero(false);
@@ -46,8 +55,8 @@ export default function Navbar() {
                 setShow(true);
             }
             setLastScrollY(currentScrollY);
-            if (heroSection && pathname === "/") {
-                const heroBottom = heroSection.offsetHeight;
+            if ((heroSection && pathname === "/") || pathname.startsWith("/projects/")) {
+                const heroBottom = heroSection?.offsetHeight || window.innerHeight;
                 setIsAboveHero(currentScrollY < heroBottom);
             } else {
                 setIsAboveHero(false);
@@ -80,7 +89,9 @@ export default function Navbar() {
                         <li key={item.name} className="relative">
                             <Link
                                 href={item.href}
-                                className="focus:outline-none font-sans"
+                                className={`focus:outline-none font-sans transition-all ${
+                                    active === item.name ? "font-bold" : "font-normal"
+                                }`}
                                 onClick={() => setActive(item.name)}
                             >
                                 {item.name}
@@ -88,11 +99,11 @@ export default function Navbar() {
 
                             {active === item.name && (
                                 <motion.div
+                                    key={pathname}
                                     className={`absolute left-0 -bottom-1 w-full h-0.5 rounded ${isAboveHero ? "bg-white" : "bg-primary"
                                         }`}
-                                    initial={{ opacity: 0 }}
+                                    initial={{ opacity: 1 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.2 }}
                                 />
                             )}
                         </li>
