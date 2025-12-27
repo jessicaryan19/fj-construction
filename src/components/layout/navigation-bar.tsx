@@ -89,7 +89,7 @@ export default function Navbar() {
                         <li key={item.name} className="relative">
                             <Link
                                 href={item.href}
-                                className={`focus:outline-none font-sans transition-all ${
+                                className={`focus:outline-none font-sans transition-all hover:font-bold ${
                                     active === item.name ? "font-bold" : "font-normal"
                                 }`}
                                 onClick={() => setActive(item.name)}
@@ -99,11 +99,13 @@ export default function Navbar() {
 
                             {active === item.name && (
                                 <motion.div
-                                    key={pathname}
+                                    key={isNavigating ? pathname : "underline"}
+                                    layoutId={!isNavigating ? "underline" : undefined}
                                     className={`absolute left-0 -bottom-1 w-full h-0.5 rounded ${isAboveHero ? "bg-white" : "bg-primary"
                                         }`}
                                     initial={{ opacity: 1 }}
                                     animate={{ opacity: 1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                 />
                             )}
                         </li>
