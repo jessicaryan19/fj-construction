@@ -3,13 +3,37 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { routes } from "@/data/routes";
 
 export default function Navbar() {
-    const [active, setActive] = useState("Home");
+    const pathname = usePathname();
+    const [active, setActive] = useState(() => {
+        const currentRoute = routes.find((route) => route.href === pathname);
+        return currentRoute ? currentRoute.name : "Home";
+    });
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isAboveHero, setIsAboveHero] = useState(false);
+
+    // Update active tab when pathname changes
+    useEffect(() => {
+        const currentRoute = routes.find((route) => route.href === pathname);
+        if (currentRoute) {
+            setActive(currentRoute.name);
+        }
+    }, [pathname]);
+
+    // Check initial scroll position and hero section
+    useEffect(() => {
+        const heroSection = document.getElementById("hero-section");
+        if (heroSection && pathname === "/") {
+            const heroBottom = heroSection.offsetHeight;
+            setIsAboveHero(window.scrollY < heroBottom);
+        } else {
+            setIsAboveHero(false);
+        }
+    }, [pathname]);
 
     useEffect(() => {
         const heroSection = document.getElementById("hero-section");
@@ -22,15 +46,17 @@ export default function Navbar() {
                 setShow(true);
             }
             setLastScrollY(currentScrollY);
-            if (heroSection) {
+            if (heroSection && pathname === "/") {
                 const heroBottom = heroSection.offsetHeight;
                 setIsAboveHero(currentScrollY < heroBottom);
+            } else {
+                setIsAboveHero(false);
             }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, [lastScrollY, pathname]);
 
     return (
         <motion.nav
