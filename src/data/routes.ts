@@ -7,9 +7,25 @@ export const routes = [
     { name: "Contact Us", href: "/contact-us" },
 ];
 
-export const externalLinks = {
-    instagram: "https://www.instagram.com/fjconstructionsbali?igsh=MWs5aTg1bDRiYmU3ZA==",
-    linkedin: "https://www.linkedin.com/company/ferry-jaya-constructions/",
-    email: "mailto:constructions.fjc@gmail.com",
-    whatsapp: "https://wa.me/6281944220801"
+export const socialsData = {
+    email: {
+        name: "constructions.fjc@gmail.com",
+        icon: "tabler:mail-filled",
+        link: "mailto:constructions.fjc@gmail.com"
+    },
+    whatsapp: {
+        name: "+62 819 4422 0801",
+        icon: "ri:whatsapp-fill",
+        link: "https://wa.me/6281944220801"
+    },
+    instagram: {
+        name: "@fjconstructionsbali",
+        icon: "iconoir:instagram",
+        link: "https://www.instagram.com/fjconstructionsbali?igsh=MWs5aTg1bDRiYmU3ZA=="
+    },
+    linkedin: {
+        name: "FJ Constructions",
+        icon: "mdi:linkedin",
+        link: "https://www.linkedin.com/company/ferry-jaya-constructions/"
+    },
 }

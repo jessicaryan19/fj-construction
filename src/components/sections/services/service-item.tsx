@@ -16,7 +16,7 @@ export default function ServiceItem({
             <div className={`container flex gap-20 items-center ${isOdd && 'flex-row-reverse'}`}>
                 <div className="relative aspect-video w-3/5 rounded-3xl overflow-hidden">
                     <Image
-                        src={`/services/${service.image}`}
+                        src={service.image}
                         alt=""
                         fill
                         style={{ objectFit: "cover" }}

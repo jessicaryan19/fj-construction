@@ -4,7 +4,7 @@ import BuildTogetherSection from "@/components/sections/home/build-together-sect
 import HeroSection from "@/components/sections/hero-section";
 import OfferExpertise from "@/components/sections/about-us/offer-expertise";
 import OurProjectsHighlight from "@/components/sections/home/our-projects-highlight";
-import WhatTheySay from "@/components/sections/home/what-they-say";
+import TestimonialsSection from "@/components/sections/home/testimonials-section";
 import WhyPartnerSection from "@/components/sections/home/why-partner-section";
 import WhyUsSection from "@/components/sections/about-us/why-us-section";
 
@@ -29,7 +29,7 @@ export default function Home() {
         <WhyPartnerSection />
 
         <div className="w-full flex flex-col gap-10 items-center">
-          <WhatTheySay />
+          <TestimonialsSection />
           <SlidingButton text="Explore More Benefits" type="primary" />
         </div>
 
