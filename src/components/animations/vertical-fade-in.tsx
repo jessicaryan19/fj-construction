@@ -16,13 +16,14 @@ export default function VerticalFadeIn({
     className
 }: VerticalFadeInProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.3 });
+    const isInView = useInView(ref, { once: false, amount: 0.25 });
 
     return (
         <AnimatePresence>
             <motion.div
                 className={cn("w-full", className)}
                 ref={ref}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{
                     opacity: isInView ? 1 : 0,
                     y: isInView ? 0 : 20

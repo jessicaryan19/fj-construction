@@ -14,7 +14,7 @@ export default function GlassContainer({
     return (
         <div className={cn(
             "relative rounded-3xl text-white border border-white/50 flex flex-1 flex-col h-full",
-            "bg-linear-to-r from-white/8 via-white/24 to-white/8 backdrop-blur-lg",
+            "bg-linear-to-br from-white/5 via-white/24 to-white/5 backdrop-blur-sm",
             className
         )}>
             {children}

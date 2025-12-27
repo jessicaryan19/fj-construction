@@ -1,3 +1,4 @@
+import VerticalFadeIn from "@/components/animations/vertical-fade-in"
 import { partnershipModelData } from "@/data/partnership"
 import Image from "next/image"
 
@@ -7,9 +8,10 @@ export default function PartnershipModels() {
             <h1 className="text-primary">Our Partnership Models</h1>
 
             <div className="grid grid-cols-3 gap-10 w-full">
-                {partnershipModelData.map((data) => (
-                    <div
+                {partnershipModelData.map((data, index) => (
+                    <VerticalFadeIn
                         key={data.title}
+                        delay={index * 0.1}
                         className="relative w-full h-[420px] cursor-pointer"
                     >
                         <div className="absolute top-0 left-0 w-full h-2/3 overflow-hidden rounded-3xl">
@@ -25,7 +27,7 @@ export default function PartnershipModels() {
                             <h3>{data.title}</h3>
                             <p>{data.description}</p>
                         </div>
-                    </div>
+                    </VerticalFadeIn>
                 ))}
             </div>
         </div>

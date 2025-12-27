@@ -1,3 +1,4 @@
+import VerticalFadeIn from "@/components/animations/vertical-fade-in"
 import ProjectContentRenderer from "@/components/sections/projects/details/project-content-renderer"
 import ProjectHero from "@/components/sections/projects/project-hero"
 import ProjectSlideshow from "@/components/sections/projects/project-slideshow"
@@ -30,10 +31,10 @@ export default async function ProjectDetails({
                     ))}
                 </div>
 
-                <div className="flex flex-col gap-20 w-full items-center">
+                <VerticalFadeIn className="flex flex-col gap-20 w-full items-center">
                     <h1 className="text-primary">Unlock More of Our Projects</h1>
                     <ProjectSlideshow startIndex={index + 1} />
-                </div>
+                </VerticalFadeIn>
             </main>
         </div>
     )

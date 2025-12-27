@@ -1,3 +1,4 @@
+import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 import ProjectCard from "@/components/sections/projects/project-card";
 import ProjectClosing from "@/components/sections/projects/project-closing";
 import { projectsData } from "@/data/projects";
@@ -13,8 +14,10 @@ export default function Projects() {
                 </div>
 
                 <div className="container grid grid-cols-2 gap-16">
-                    {projectsData.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                    {projectsData.map((project, index) => (
+                        <VerticalFadeIn key={project.id} delay={index * 0.1} >
+                            <ProjectCard project={project} />
+                        </VerticalFadeIn>
                     ))}
                 </div>
 
