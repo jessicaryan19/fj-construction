@@ -17,10 +17,12 @@ export default function ProjectContentRenderer({
         return <ImageTextContent project={project} content={content} />
     } else if (content.type === "image-text-right") {
         return <ImageTextContent project={project} content={content} />
-    } else if (content.type === "two-image") {
-        return <TwoImage project={project} content={content} />
     } else if (content.type === "one-image") {
         return <OneImage project={project} content={content} />
+    } else if (content.type === "two-image") {
+        return <TwoImage project={project} content={content} />
+    } else if (content.type === "three-image") {
+        return <ThreeImage project={project} content={content} />
     } else if (content.type === "text") {
         return <TextContent project={project} content={content} />
     }
@@ -62,7 +64,7 @@ function OneImage({
     content,
 }: ProjectContentRendererProps) {
     return (
-        < div className="relative rounded-3xl overflow-hidden aspect-16/6" >
+        <div className={`relative rounded-3xl overflow-hidden aspect-16/6 ${content.className}`} >
             <ImageRoundedCard
                 source={`/projects/${project.id}/${content.images}`}
             />
@@ -75,14 +77,13 @@ function TwoImage({
     content,
 }: ProjectContentRendererProps) {
     return (
-        < div className="grid grid-cols-[3fr_2fr] gap-10" >
-            < div className="relative rounded-3xl overflow-hidden aspect-video" >
+        <div className="grid grid-cols-[3fr_2fr] gap-10" >
+            <div className="relative aspect-video" >
                 <ImageRoundedCard
                     source={`/projects/${project.id}/${content.images[0]}`}
                 />
             </div >
-
-            < div className="relative rounded-3xl overflow-hidden" >
+            <div className="relative" >
                 <ImageRoundedCard
                     source={`/projects/${project.id}/${content.images[1]}`}
                 />
@@ -90,6 +91,30 @@ function TwoImage({
         </div >
     )
 }
+
+function ThreeImage({
+    project,
+    content,
+}: ProjectContentRendererProps) {
+    return (
+        <div className="flex gap-10" >
+            <div className="flex flex-col w-2/3 gap-10">
+                <div className="relative aspect-video" >
+                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[0]}`}/>
+                </div >
+                <div className="relative aspect-video" >
+                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[1]}`}/>
+                </div >
+            </div>
+            <div className="relative flex-1 pt-40 pb-20 aspect-9/16">
+                <ImageRoundedCard
+                    source={`/projects/${project.id}/${content.images[2]}`}
+                />
+            </div >
+        </div >
+    )
+}
+
 
 function ImageTextContent({
     project,

@@ -1,9 +1,10 @@
 import { RichText } from "@/components/ui/rich-text"
 
 export type ProjectContentBlock = {
-    type: "text" | "text-primary" | "two-image-one-desc" | "image-text-left" | "image-text-right" | "two-image" | "one-image";
+    type: "text" | "text-primary" | "two-image-one-desc" | "image-text-left" | "image-text-right" | "three-image" | "two-image" | "one-image" | "circle-text";
     images: string | string[];
     text: RichText;
+    className?: string;
 }
 export type Project = {
     id: string,
@@ -84,7 +85,25 @@ export const projectsData: Project[] = [
                     { text: "for beginning and ending the day in calm." },
                 ]
             },
-
+            {
+                type: "text",
+                images: "",
+                text: [
+                    { text: "With", bold: true },
+                    { text: "premium finishes", underline: true, bold: true },
+                    { text: "and integrated", bold: true },
+                    { text: "smart-home", underline: true, bold: true },
+                    { text: "features,", bold: true },
+                ]
+            },
+            {
+                type: "circle-text",
+                images: "",
+                text: [
+                    { text: "Villa Radja is a testament to disciplined construction, precise craftsmanship, and a commitment to delivering a " },
+                    { text: "sophisticated living in a truly serene setting.", underline: true }
+                ]
+            }
         ]
     },
     {
@@ -165,6 +184,13 @@ export const projectsData: Project[] = [
                     { text: "effortless large-scale living.", underline: true },
                 ]
             },
+            {
+                type: "circle-text",
+                images: "",
+                text: [
+                    { text: "A grand, modern tropical estate built for those who seek scale, sophistication, and unforgettable spaces.", bold: true },
+                ]
+            },
         ]
     },
     {
@@ -185,6 +211,80 @@ export const projectsData: Project[] = [
                     { text: "Adeva Villa & Kost is a" },
                     { text: "smart, efficient approach", underline: true },
                     { text: "to mixed-use residential living." },
+                ]
+            },
+            {
+                type: "image-text-right",
+                images: "exterior-3.jpg",
+                text: [
+                    { text: "The architecture embraces multi-story, stacked structures, maximizing space while maintaining a clean, modern aesthetic." },
+                ]
+            },
+            {
+                type: "image-text-left",
+                images: "exterior-4.jpg",
+                text: [
+                    { text: "White façades are sharply framed by dark windows and balconies, softened by tropical landscaping and a signature vertical green wall that" },
+                    { text: "adds warmth to the geometry.", underline: true },
+                    { text: "to the geometry." },
+                ]
+            },
+            {
+                type: "text",
+                images: "",
+                text: [
+                    { text: "The layout is centered around a practical courtyard and driveway, creating" },
+                    { text: "smooth circulation", underline: true },
+                    { text: "to the geometry.for vehicles and residents while connecting the Kost units and villas within" },
+                    { text: "one cohesive environment", underline: true },
+                ]
+            },
+            {
+                type: "one-image",
+                images: "map.jpg",
+                text: [],
+                className: "aspect-video"
+            },
+            {
+                type: "one-image",
+                images: "exterior-5.jpg",
+                text: []
+            },
+            {
+                type: "three-image",
+                images: ["park-1.jpg", "park-2.jpg", "park-3.jpg"],
+                text: []
+            },
+            {
+                type: "text-primary",
+                images: "",
+                text: [{ text: "This development blends two accommodation types seamlessly." }]
+            },
+            {
+                type: "image-text-right",
+                images: "slideshow-main.png",
+                text: [{ text: "16 functional Kost units designed for long-term rentals," }]
+            },
+            {
+                type: "image-text-left",
+                images: "building.jpg",
+                text: [{ text: "and 2 private villas crafted for a more premium stay." }]
+            },
+            {
+                type: "text",
+                images: "",
+                text: [{ text: "Wrapped in modern simplicity and tropical accents,", bold: true }]
+            },
+            {
+                type: "circle-text",
+                images: "",
+                text: [
+                    { text: "Adeva Villa & Kost stands as a thoughtful, well-executed solution for high-density living that still feels", bold: true },
+                    { text: "bright,", bold: true, underline: true },
+                    { text: "modern,", bold: true, underline: true },
+                    { text: "and", bold: true },
+                    { text: "welcoming.", bold: true, underline: true },
+
                 ]
             },
         ]
