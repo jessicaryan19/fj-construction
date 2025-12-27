@@ -1,10 +1,11 @@
 import { Icon } from "@iconify/react";
 import { Card } from "../ui/card";
+import { ReactNode } from "react";
 
 interface ImageRevealCardProps {
     image: string;
     title: string;
-    description?: string;
+    description?: string | ReactNode;
 }
 
 export default function ImageRevealCard({ image, title, description }: ImageRevealCardProps) {
@@ -23,7 +24,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
             />
             <div className="absolute inset-0 bg-black/60"/>
 
-            <div className="absolute flex flex-col justify-between py-6 px-16 text-white h-full">
+            <div className="absolute flex flex-col justify-between py-6 px-16 text-white h-full w-full">
                 <h3 className="text-center">
                     {title}
                 </h3>
@@ -36,19 +37,20 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                     />
 
                     {description && (
-                        <p
+                        <div
                             className="
                                 text-center opacity-0 
                                 translate-y-4
                                 max-h-12 overflow-hidden
                                 transition-all duration-500
+                                w-full
                                 group-hover:opacity-100 
                                 group-hover:translate-y-1
                                 group-hover:max-h-40
                             "
                         >
                             {description}
-                        </p>
+                        </div>
                     )}
                 </div>
             </div>

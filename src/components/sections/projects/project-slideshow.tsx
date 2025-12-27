@@ -7,6 +7,7 @@ import { projectsData } from "@/data/projects"
 import ArrowButton from "@/components/buttons/arrow-button"
 import { Button } from "@/components/ui/button"
 import SlidingButton from "@/components/buttons/sliding-button"
+import { useRouter } from "next/navigation"
 
 const slideVariants = {
     enter: (direction: number) => ({
@@ -23,12 +24,20 @@ const slideVariants = {
     }),
 }
 
-export default function ProjectSlideshow() {
-    const [[index, direction], setIndex] = useState<[number, number]>([0, 0])
+interface ProjectSlideshowProps {
+    startIndex?: number
+}
+export default function ProjectSlideshow({
+    startIndex = 0
+}: ProjectSlideshowProps) {
+    const router = useRouter()
+    const total = projectsData.length;
+    const safeStartIndex = total === 0 ? 0 : ((startIndex % total) + total) % total;
 
+    const [[index, direction], setIndex] = useState<[number, number]>([safeStartIndex, 0]);
     const paginate = (newDirection: number) => {
         setIndex(([prevIndex]) => [
-            (prevIndex + newDirection + projectsData.length) % projectsData.length,
+            (prevIndex + newDirection + total) % total,
             newDirection,
         ])
     }
@@ -57,7 +66,9 @@ export default function ProjectSlideshow() {
                                 <ArrowButton direction="right" onClick={() => paginate(1)} />
                             </div>
                             <div className="flex gap-4">
-                                <Button size="custom">Learn Details</Button>
+                                <Button size="custom" onClick={() => router.push(`/projects/${project.id}`)}>
+                                    Learn Details
+                                </Button>
                                 <SlidingButton
                                     text="View All Projects"
                                     type="inverted"

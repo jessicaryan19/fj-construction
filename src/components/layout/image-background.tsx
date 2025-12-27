@@ -2,11 +2,13 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 interface ImageBackgroundProps {
-    image?: string,
+    image?: string
+    opacity?: number
     children?: ReactNode
 }
 export default function ImageBackground({
     image = "/hero-section.png",
+    opacity = 50,
     children
 }: ImageBackgroundProps) {
     return (
@@ -18,7 +20,10 @@ export default function ImageBackground({
                 style={{ objectFit: "cover" }}
                 priority
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div
+                className="absolute inset-0 bg-black"
+                style={{ opacity: opacity / 100 }}
+            />
             <div className="relative z-10">
                 {children}
             </div>

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import ArrowButton from "../../buttons/arrow-button";
 import { testimonialsData } from "@/data/testimonials";
 import GlassContainer from "@/components/ui/glass-container";
+import RichTextRenderer from "@/components/ui/rich-text";
 
 export default function TestimonialsSection() {
     const [api, setApi] = useState<CarouselApi>()
@@ -55,9 +56,7 @@ export default function TestimonialsSection() {
                                         <Icon icon="fa-solid:quote-left" className="absolute text-secondary text-6xl -top-6 -left-6" />
                                         <Icon icon="fa-solid:quote-right" className="absolute text-secondary text-6xl -bottom-6 -right-6" />
                                         <div className="flex flex-col gap-2 justify-center h-full">
-                                            {testimonial.parts.map((part, i) =>
-                                                typeof part === "string" ? <span className="text-xl" key={i}>{part}</span> : <h3 key={i}>{part.bold}</h3>
-                                            )}
+                                            <RichTextRenderer content={testimonial.parts} className="text-xl"/>
                                         </div>
                                     </GlassContainer>
                                 </CarouselItem>

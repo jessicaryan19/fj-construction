@@ -2,6 +2,7 @@ import { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
     project: Project
@@ -10,7 +11,7 @@ export default function ProjectCard({
     project
 }: ProjectCardProps) {
     return (
-        <div className="group flex flex-col gap-4 cursor-pointer">
+        <Link href={`/projects/${project.id}`} className="group flex flex-col gap-4 cursor-pointer">
             <div className="relative aspect-video w-full rounded-3xl overflow-hidden">
                 <Image
                     src={`/projects/${project.id}/slideshow-secondary.png`}
@@ -43,6 +44,6 @@ export default function ProjectCard({
             <h3 className="font-medium text-primary">
                 {project.shortDesc}
             </h3>
-        </div>
+        </Link>
     )
 }

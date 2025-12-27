@@ -17,7 +17,7 @@ export default function GlassCard({
     description,
 }: GlassCardProps) {
     return (
-        <GlassContainer className="gap-4 p-5 justify-between items-end aspect-video">
+        <GlassContainer className="gap-4 p-5 justify-between items-end">
             <div className="bg-white p-3 rounded-full w-fit">
                 <Icon icon={icon} className="text-primary text-3xl" />
             </div>

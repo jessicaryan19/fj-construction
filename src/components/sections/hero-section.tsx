@@ -4,7 +4,7 @@ import ImageBackground from "../layout/image-background";
 export default function HeroSection() {
     return (
         <ImageBackground>
-            <div className="flex flex-col items-center justify-end h-[95vh] pb-64">
+            <div className="flex flex-col items-center justify-end h-screen pb-64">
                 <div className="container flex flex-col gap-10">
                     <h1 className="text-white text-7xl w-3/4 leading-tight">Your Partner in Reliable Constructions.</h1>
                     <SlidingButton text="View Projects" href="/projects" />
