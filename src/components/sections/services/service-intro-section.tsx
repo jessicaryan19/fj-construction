@@ -9,7 +9,7 @@ export default function ServicesIntroSection() {
                 <span className="inline-flex items-baseline text-4xl text-[#3A4A30]">
                     <span className="relative mr-1 inline-block h-8 w-8 self-center">
                         <Image
-                            src="/star.svg"
+                            src="//svg-art/flower.svg"
                             alt="Star"
                             fill
                             className="object-contain"
@@ -23,7 +23,7 @@ export default function ServicesIntroSection() {
                 <span className="inline-flex items-baseline text-4xl text-[#3A4A30]">
                     <span className="relative mx-1 inline-block h-8 w-8 self-center">
                         <Image
-                            src="/star.svg"
+                            src="//svg-art/flower.svg"
                             alt="Star"
                             fill
                             className="object-contain"
@@ -42,7 +42,7 @@ export default function ServicesIntroSection() {
             </p>
             <div className="relative w-screen -mx-[calc((100vw-100%)/2)]">
                 <Image
-                    src="/star-long.svg"
+                    src="//svg-art/star-long.svg"
                     alt="Star"
                     width={300}
                     height={80}

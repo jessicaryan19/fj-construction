@@ -2,12 +2,12 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 interface ImageBackgroundProps {
-    image?: string
+    image: string
     opacity?: number
     children?: ReactNode
 }
 export default function ImageBackground({
-    image = "/hero-section.png",
+    image,
     opacity = 50,
     children
 }: ImageBackgroundProps) {

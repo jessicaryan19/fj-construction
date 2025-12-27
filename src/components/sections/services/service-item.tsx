@@ -44,7 +44,7 @@ export default function ServiceItem({
 
             <div className={`relative w-screen -mx-[calc((100vw-100%)/2)] flex ${isOdd ? "justify-end" : "justify-start"}`}>
                 <Image
-                    src="/star-long.svg"
+                    src="//svg-art/star-long.svg"
                     alt="Star"
                     width={300}
                     height={80}

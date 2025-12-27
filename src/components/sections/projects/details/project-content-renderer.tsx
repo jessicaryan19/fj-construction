@@ -1,6 +1,8 @@
 import ImageRoundedCard from "@/components/cards/image-rounded-card";
 import RichTextRenderer from "@/components/ui/rich-text";
 import { Project, ProjectContentBlock } from "@/data/projects";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface ProjectContentRendererProps {
     project: Project
@@ -13,18 +15,16 @@ export default function ProjectContentRenderer({
 }: ProjectContentRendererProps) {
     if (content.type === "two-image-one-desc") {
         return <TwoImageOneDesc project={project} content={content} />
-    } else if (content.type === "image-text-left") {
-        return <ImageTextContent project={project} content={content} />
-    } else if (content.type === "image-text-right") {
+    } else if (content.type === "image-text-left" || content.type === "image-text-right") {
         return <ImageTextContent project={project} content={content} />
     } else if (content.type === "one-image") {
         return <OneImage project={project} content={content} />
-    } else if (content.type === "two-image") {
+    } else if (content.type === "two-image" || content.type === "two-image-flip") {
         return <TwoImage project={project} content={content} />
     } else if (content.type === "three-image") {
         return <ThreeImage project={project} content={content} />
-    } else if (content.type === "text") {
-        return <TextContent project={project} content={content} />
+    } else if (content.type === "circle-text") {
+        return <CircleText project={project} content={content} />
     }
     return <TextContent project={project} content={content} />
 }
@@ -53,7 +53,7 @@ function TextContent({
 }: ProjectContentRendererProps) {
     const colorStyle = content.type === "text" ? "text-primary" : "bg-primary text-white"
     return (
-        <div className={`rounded-3xl py-12 px-32 text-center leading-tight ${colorStyle}`}>
+        <div className={`rounded-3xl py-12 px-24 text-center leading-tight ${colorStyle}`}>
             <RichTextRenderer content={content.text} />
         </div>
     )
@@ -76,19 +76,21 @@ function TwoImage({
     project,
     content,
 }: ProjectContentRendererProps) {
+    const isFlipped = content.type === 'two-image-flip';
+
     return (
-        <div className="grid grid-cols-[3fr_2fr] gap-10" >
-            <div className="relative aspect-video" >
+        <div className={`grid gap-10 ${isFlipped ? 'grid-cols-[2fr_3fr]' : 'grid-cols-[3fr_2fr]'}`}>
+            <div className="relative min-h-[400px]">
                 <ImageRoundedCard
                     source={`/projects/${project.id}/${content.images[0]}`}
                 />
-            </div >
-            <div className="relative" >
+            </div>
+            <div className="relative min-h-[400px]">
                 <ImageRoundedCard
                     source={`/projects/${project.id}/${content.images[1]}`}
                 />
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 
@@ -100,10 +102,10 @@ function ThreeImage({
         <div className="flex gap-10" >
             <div className="flex flex-col w-2/3 gap-10">
                 <div className="relative aspect-video" >
-                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[0]}`}/>
+                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[0]}`} />
                 </div >
                 <div className="relative aspect-video" >
-                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[1]}`}/>
+                    <ImageRoundedCard source={`/projects/${project.id}/${content.images[1]}`} />
                 </div >
             </div>
             <div className="relative flex-1 pt-40 pb-20 aspect-9/16">
@@ -130,6 +132,46 @@ function ImageTextContent({
             </div>
             <div className={`flex-1 text-primary leading-tight p-4 ${rendererStyle}`}>
                 <RichTextRenderer content={content.text} />
+            </div>
+        </div>
+    )
+}
+
+function CircleText({
+    content,
+}: ProjectContentRendererProps) {
+    return (
+        <div className="relative w-full">
+            <Image className="absolute right-32" src="/svg-art/star.svg" alt="Star" width={120} height={120} />
+            <Image className="absolute left-32 bottom-0" src="/svg-art/star.svg" alt="Star" width={120} height={120} />
+            <svg
+                viewBox="0 0 946 400"
+                className="w-full h-full"
+                aria-hidden
+            >
+                <ellipse
+                    cx="473"
+                    cy="200"
+                    rx="460"
+                    ry="200"
+                    fill="#334B2C"
+                />
+                <ellipse
+                    cx="473"
+                    cy="200"
+                    rx="460"
+                    ry="160"
+                    fill="none"
+                    stroke="#9EB4AB"
+                    strokeWidth="3"
+                    transform="rotate(-12 473 200)"
+                />
+            </svg>
+
+            <div className="absolute inset-0 flex items-center justify-center px-54 text-center">
+                <div className="text-white leading-tight">
+                    <RichTextRenderer content={content.text} />
+                </div>
             </div>
         </div>
     )

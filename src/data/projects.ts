@@ -1,7 +1,7 @@
 import { RichText } from "@/components/ui/rich-text"
 
 export type ProjectContentBlock = {
-    type: "text" | "text-primary" | "two-image-one-desc" | "image-text-left" | "image-text-right" | "three-image" | "two-image" | "one-image" | "circle-text";
+    type: "text" | "text-primary" | "two-image-one-desc" | "image-text-left" | "image-text-right" | "three-image" | "two-image" | "two-image-flip" | "one-image" | "circle-text";
     images: string | string[];
     text: RichText;
     className?: string;
@@ -299,6 +299,85 @@ export const projectsData: Project[] = [
         landSize: 201.8,
         buildingSize: 304,
         finishedIn: 2025,
-        content: []
+        content: [
+            {
+                type: "two-image-one-desc",
+                images: ["slideshow-main.png", "building-1.png"],
+                text: [
+                    { text: "Marlboro Kost is designed with one clear purpose: to deliver" },
+                    { text: "a profitable, durable, and efficient rental property.", underline: true },
+                ]
+            },
+            {
+                type: "image-text-right",
+                images: "terrace.png",
+                text: [
+                    { text: "The architecture uses a" },
+                    { text: "straightforward multi-level structure,", underline: true },
+                    { text: "defined by clean lines, strong geometry," },
+                ]
+            },
+            {
+                type: "image-text-left",
+                images: "balcony.png",
+                text: [
+                    { text: "and a high-contrast palette of white façades, dark-framed windows, and a dark roof—creating a sharp, modern look ideal for commercial use." },
+                ]
+            },
+            {
+                type: "two-image",
+                images: ["garage.png", "interior.png"],
+                text: []
+            },
+            {
+                type: "image-text-right",
+                images: "bedroom-1.png",
+                text: [
+                    { text: "Built specifically for the" },
+                    { text: "long-term rental market,", underline: true },
+                    { text: "this development consists of 16 individual Kost units," },
+                ]
+            },
+            {
+                type: "image-text-left",
+                images: "bedroom-2.png",
+                text: [
+                    { text: "each crafted to offer privacy, comfort, and functionality." },
+                ]
+            },
+            {
+                type: "text-primary",
+                images: "",
+                text: [
+                    { text: "The focused unit count allows the property to maximize plot efficiency while supporting stable rental yields, making it a" },
+                    { text: "strategic investment", underline: true },
+                    { text: "for its owner." },
+                ]
+            },
+            {
+                type: "one-image",
+                images: "slideshow-secondary.png",
+                text: []
+            },
+            {
+                type: "two-image-flip",
+                images: ["front-view.png", "building-5.png"],
+                text: []
+            },
+            {
+                type: "two-image",
+                images: ["living-room-1.png", "living-room-2.png"],
+                text: []
+            },
+            {
+                type: "circle-text",
+                images: [],
+                text: [
+                    {text: "Marlboro Kost stands as a"},
+                    {text: "practical, contemporary asset:", underline: true},
+                    {text: "Built to perform, built to last, and built to meet the growing demand for modern, reliable rental housing."},
+                ]
+            },
+        ]
     }
 ]

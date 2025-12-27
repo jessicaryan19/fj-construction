@@ -7,9 +7,9 @@ export default function BuildTogetherSection() {
     return (
         <ImageCTE image="/about/image-2.jpg">
             <div className="flex flex-row gap-4">
-                <Image src="/star-white.svg" alt="Star" width={40} height={40} />
+                <Image src="/svg-art/flower-white.svg" alt="Star" width={40} height={40} />
                 <h1 className="text-white text-7xl uppercase">Lets Build Together</h1>
-                <Image src="/star-white.svg" alt="Star" width={40} height={40} />
+                <Image src="/svg-art/flower-white.svg" alt="Star" width={40} height={40} />
             </div>
             <div className="flex flex-col gap-2">
                 <h1 className="text-white">Join us in shaping Bali’s</h1>

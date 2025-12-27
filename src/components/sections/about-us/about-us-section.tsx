@@ -58,7 +58,7 @@ export default function AboutUsSection() {
             <div className="flex-1 flex flex-col gap-12 text-primary h-full">
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-4 items-center">
-                        <Image src="/star.svg" alt="Star" width={40} height={40} />
+                        <Image src="//svg-art/flower.svg" alt="Star" width={40} height={40} />
                         <h1>FJ Constructions</h1>
                         <Line />
                     </div>
