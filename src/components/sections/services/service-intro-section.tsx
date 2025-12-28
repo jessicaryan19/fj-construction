@@ -1,3 +1,5 @@
+import FlowerIcon from "@/components/icons/flower-icon";
+import StarLongIcon from "@/components/icons/star-long-icon";
 import Image from "next/image";
 
 export default function ServicesIntroSection() {
@@ -8,26 +10,16 @@ export default function ServicesIntroSection() {
 
                 <span className="inline-flex items-baseline text-4xl text-[#3A4A30]">
                     <span className="relative mr-1 inline-block h-8 w-8 self-center">
-                        <Image
-                            src="/svg-art/flower.svg"
-                            alt="Star"
-                            fill
-                            className="object-contain"
-                        />
+                        <FlowerIcon className="w-full" />
                     </span>
                     ideas
                 </span>{" "}
 
-                into{" "}
+                into
 
                 <span className="inline-flex items-baseline text-4xl text-[#3A4A30]">
                     <span className="relative mx-1 inline-block h-8 w-8 self-center">
-                        <Image
-                            src="/svg-art/flower.svg"
-                            alt="Star"
-                            fill
-                            className="object-contain"
-                        />
+                        <FlowerIcon className="w-full" />
                     </span>
                     structures
                 </span>{" "}
@@ -41,13 +33,7 @@ export default function ServicesIntroSection() {
                 </span>
             </p>
             <div className="relative w-screen -mx-[calc((100vw-100%)/2)]">
-                <Image
-                    src="/svg-art/star-long.svg"
-                    alt="Star"
-                    width={300}
-                    height={80}
-                    className="object-contain absolute right-0"
-                />
+                <StarLongIcon className="object-contain absolute right-0 text-primary" width={300} />
             </div>
         </div>
     )

@@ -1,5 +1,7 @@
 import VerticalFadeIn from "@/components/animations/vertical-fade-in";
+import StarLongIcon from "@/components/icons/star-long-icon";
 import { Service } from "@/data/services"
+import { cn } from "@/lib/utils";
 import Image from "next/image"
 
 interface ServiceItemProps {
@@ -45,13 +47,12 @@ export default function ServiceItem({
                 </div>
 
                 <div className={`relative w-screen -mx-[calc((100vw-100%)/2)] flex ${isOdd ? "justify-end" : "justify-start"}`}>
-                    <Image
-                        src="/svg-art/star-long.svg"
-                        alt="Star"
+                    <StarLongIcon
                         width={300}
-                        height={80}
-                        className={`object-contain ${!isOdd && "scale-x-[-1]"}`}
-                    />
+                        className={cn(
+                            "object-contain text-primary",
+                            !isOdd && "scale-x-[-1]"
+                        )} />
                 </div>
             </div>
         </VerticalFadeIn>

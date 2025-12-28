@@ -1,0 +1,8 @@
+export default function StarLongIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="450" height="110" viewBox="0 0 450 110" fill="none" {...props}>
+            <path d="M474 55L361.541 57.5668L356.036 110L350.531 57.5668L0 55L350.531 52.4332L356.036 0L361.541 52.4332L474 55Z"
+            fill="currentColor" />
+        </svg>
+    )
+}

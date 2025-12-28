@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Line from "../../ui/line";
 import VerticalFadeIn from "@/components/animations/vertical-fade-in";
+import FlowerIcon from "@/components/icons/flower-icon";
 
 export default function AboutUsSection() {
     const coreStrengths = [{
@@ -62,7 +63,7 @@ export default function AboutUsSection() {
             <div className="flex-1 flex flex-col gap-12 text-primary h-full">
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-4 items-center">
-                        <Image src="/svg-art/flower.svg" alt="Star" width={40} height={40} />
+                        <FlowerIcon/>
                         <h1>FJ Constructions</h1>
                         <Line />
                     </div>

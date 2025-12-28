@@ -1,5 +1,6 @@
 import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 import ImageRoundedCard from "@/components/cards/image-rounded-card";
+import SparkleIcon from "@/components/icons/sparkle-icon";
 import RichTextRenderer from "@/components/ui/rich-text";
 import { Project, ProjectContentBlock } from "@/data/projects";
 import Image from "next/image";
@@ -124,7 +125,6 @@ function ThreeImage({
     )
 }
 
-
 function ImageTextContent({
     project,
     content,
@@ -149,8 +149,8 @@ function CircleText({
 }: ProjectContentRendererProps) {
     return (
         <div className="relative w-full">
-            <Image className="absolute right-32" src="/svg-art/star.svg" alt="Star" width={120} height={120} />
-            <Image className="absolute left-32 bottom-0" src="/svg-art/star.svg" alt="Star" width={120} height={120} />
+            <SparkleIcon className="absolute right-32 text-secondary" width={120} height={120} />
+            <SparkleIcon className="absolute left-32 bottom-0 text-secondary" width={120} height={120} />
             <svg
                 viewBox="0 0 946 400"
                 className="w-full h-full"
