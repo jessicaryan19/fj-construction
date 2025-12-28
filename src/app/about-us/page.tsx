@@ -1,3 +1,4 @@
+import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 import AboutUsSection from "@/components/sections/about-us/about-us-section";
 import OurProcess from "@/components/sections/about-us/our-process";
 import VisionSection from "@/components/sections/about-us/vision-section";
@@ -11,15 +12,17 @@ export default function AboutUs() {
             <main className="min-h-screen w-full flex flex-col gap-32 pt-40 pb-10 items-center bg-white dark:bg-black">
 
                 <div className="container flex flex-col gap-20">
-                    <h1 className="text-primary">About Us</h1>
-                    <AboutUsSection/>
+                    <VerticalFadeIn>
+                        <h1 className="text-primary">About Us</h1>
+                    </VerticalFadeIn>
+                    <AboutUsSection />
                 </div>
 
-                <WhyUsSection/>
-                <VisionSection/>
-                <WhyBuildWithUs/>
-                <OurProcess/>
-                <YourProjectDeserveTheBest/>
+                <WhyUsSection />
+                <VisionSection />
+                <WhyBuildWithUs />
+                <OurProcess />
+                <YourProjectDeserveTheBest />
             </main>
         </div>
     )

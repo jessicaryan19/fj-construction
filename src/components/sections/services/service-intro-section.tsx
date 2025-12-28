@@ -1,6 +1,5 @@
 import FlowerIcon from "@/components/icons/flower-icon";
 import StarLongIcon from "@/components/icons/star-long-icon";
-import Image from "next/image";
 
 export default function ServicesIntroSection() {
     return (

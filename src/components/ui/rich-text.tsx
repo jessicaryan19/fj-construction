@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Fragment } from "react/jsx-runtime";
 import { ClassNameValue } from "tailwind-merge";
 
 export type RichTextSpan = {
@@ -21,9 +22,8 @@ export default function RichTextRenderer({
     return (
         <>
             {content.map((span, i) => (
-                <>
+                <Fragment key={i}>
                     <span
-                        key={i}
                         className={cn(
                             span.underline && "underline",
                             span.bold && "font-bold",
@@ -34,7 +34,7 @@ export default function RichTextRenderer({
                         {span.text}
                     </span>
                     <span>{" "}</span>
-                </>
+                </Fragment>
             ))}
         </>
     )

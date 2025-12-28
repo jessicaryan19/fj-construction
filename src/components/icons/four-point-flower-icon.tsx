@@ -10,8 +10,8 @@ export default function FourPointFlowerIcon(props: React.SVGProps<SVGSVGElement>
                 </g>
             </g>
             <defs>
-                <filter id="filter0_ii_255_4514" x="-3.21591" y="-3.21607" width="56.6454" height="56.6454" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_ii_255_4514" x="-3.21591" y="-3.21607" width="56.6454" height="56.6454" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dx="-3.30519" dy="-3.30519" />
@@ -27,8 +27,8 @@ export default function FourPointFlowerIcon(props: React.SVGProps<SVGSVGElement>
                     <feBlend mode="normal" in2="effect1_innerShadow_255_4514" result="effect2_innerShadow_255_4514" />
                 </filter>
                 <linearGradient id="paint0_linear_255_4514" x1="51.3151" y1="1.75471" x2="103.652" y2="52.4262" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#334B2C" />
-                    <stop offset="1" stop-color="#9EB4AB" />
+                    <stop stopColor="#334B2C" />
+                    <stop offset="1" stopColor="#9EB4AB" />
                 </linearGradient>
             </defs>
         </svg>

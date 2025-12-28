@@ -60,10 +60,10 @@ export default function AboutUsSection() {
 
             </div>
 
-            <div className="flex-1 flex flex-col gap-12 text-primary h-full">
+            <VerticalFadeIn className="flex-1 flex flex-col gap-12 text-primary h-full">
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-4 items-center">
-                        <FlowerIcon/>
+                        <FlowerIcon />
                         <h1>FJ Constructions</h1>
                         <Line />
                     </div>
@@ -84,7 +84,7 @@ export default function AboutUsSection() {
                         ))
                     }
                 </div>
-            </div>
+            </VerticalFadeIn>
         </div>
     );
 }

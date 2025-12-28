@@ -10,8 +10,8 @@ export default function ThreePointStarIcon(props: React.SVGProps<SVGSVGElement>)
                 </g>
             </g>
             <defs>
-                <filter id="filter0_ii_255_4550" x="19.1836" y="23.1906" width="63.0568" height="70.0302" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_ii_255_4550" x="19.1836" y="23.1906" width="63.0568" height="70.0302" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dx="-2.63259" dy="-2.63259" />
@@ -27,8 +27,8 @@ export default function ThreePointStarIcon(props: React.SVGProps<SVGSVGElement>)
                     <feBlend mode="normal" in2="effect1_innerShadow_255_4550" result="effect2_innerShadow_255_4550" />
                 </filter>
                 <linearGradient id="paint0_linear_255_4550" x1="149.148" y1="199.672" x2="67.0984" y2="143.29" gradientUnits="userSpaceOnUse">
-                    <stop offset="0.00439468" stop-color="#334B2C" />
-                    <stop offset="1" stop-color="#9EB4AB" />
+                    <stop offset="0.00439468" stopColor="#334B2C" />
+                    <stop offset="1" stopColor="#9EB4AB" />
                 </linearGradient>
             </defs>
         </svg>
