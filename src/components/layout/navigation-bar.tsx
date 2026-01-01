@@ -76,7 +76,7 @@ export default function Navbar() {
         }
     }, [isMobileMenuOpen]);
 
-    const handleLinkClick = (name) => {
+    const handleLinkClick = (name: string) => {
         setActive(name);
         setIsMobileMenuOpen(false);
     };
