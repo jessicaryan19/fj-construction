@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SlidingButton from "../../buttons/sliding-button";
 import { socialsData } from "@/data/routes";
 import ImageCTE from "../../cards/image-cte";
@@ -9,7 +8,7 @@ export default function BuildTogetherSection() {
         <ImageCTE image="/about/image-2.jpg">
             <div className="flex flex-row gap-4 items-center">
                 <FlowerIcon type="white"/>
-                <h2 className="text-white uppercase">Lets Build Together</h2>
+                <h2 className="text-white text-center uppercase">Lets Build Together</h2>
                 <FlowerIcon type="white"/>
             </div>
             <div className="flex flex-col gap-2">

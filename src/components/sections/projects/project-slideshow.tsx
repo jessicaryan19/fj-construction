@@ -27,6 +27,7 @@ const slideVariants = {
 interface ProjectSlideshowProps {
     startIndex?: number
 }
+
 export default function ProjectSlideshow({
     startIndex = 0
 }: ProjectSlideshowProps) {
@@ -46,8 +47,8 @@ export default function ProjectSlideshow({
 
     return (
         <div className="flex flex-col gap-5 w-full items-center">
-            <div className="w-full h-full flex overflow-hidden">
-                <div className="relative bg-primary w-2/3 overflow-hidden">
+            <div className="w-full h-full flex flex-col md:flex-row overflow-hidden">
+                <div className="relative bg-primary w-full md:w-2/3 overflow-hidden">
                     <div className="absolute inset-0 opacity-20">
                         <Image
                             src="/texture.jpg"
@@ -59,14 +60,14 @@ export default function ProjectSlideshow({
                         <div className="absolute inset-0 bg-primary mix-blend-lighten" />
                     </div>
 
-                    <div className="relative flex flex-col gap-10 w-full pe-12">
-                        <div className="flex w-full justify-between items-center gap-6 py-6 ps-24 z-10">
-                            <div className="flex gap-4">
+                    <div className="relative flex flex-col gap-6 sm:gap-8 lg:gap-10 w-full md:pe-6 lg:pe-12">
+                        <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-4 sm:gap-6 py-4 sm:py-6 lg:ps-24 z-10">
+                            <div className="flex gap-4 px-4 sm:px-6">
                                 <ArrowButton onClick={() => paginate(-1)} />
                                 <ArrowButton direction="right" onClick={() => paginate(1)} />
                             </div>
-                            <div className="flex gap-4">
-                                <Button size="custom" onClick={() => router.push(`/projects/${project.id}`)}>
+                            <div className="flex flex-row gap-3 sm:gap-4 w-auto px-4 sm:px-6">
+                                <Button size="custom" onClick={() => router.push(`/projects/${project.id}`)} className="w-auto">
                                     Learn Details
                                 </Button>
                                 <SlidingButton
@@ -89,16 +90,16 @@ export default function ProjectSlideshow({
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                     className="text-right"
                                 >
-                                    <h4 className="text-secondary/60 font-medium">
+                                    <h4 className="text-secondary/60 font-medium px-4 sm:px-0">
                                         {project.location}
                                     </h4>
-                                    <h2 className="text-secondary uppercase">
+                                    <h2 className="text-secondary uppercase px-4 sm:px-0">
                                         {project.name}
                                     </h2>
                                 </motion.div>
                             </AnimatePresence>
 
-                            <div className="relative min-h-128 rounded-tr-3xl overflow-hidden z-10">
+                            <div className="relative min-h-64 sm:min-h-96 lg:min-h-128 md:rounded-tr-3xl overflow-hidden z-10">
                                 <AnimatePresence mode="wait" custom={direction}>
                                     <motion.div
                                         key={project.id}
@@ -124,7 +125,7 @@ export default function ProjectSlideshow({
                     </div>
                 </div>
 
-                <div className="flex-1 relative overflow-hidden">
+                <div className="flex-1 relative overflow-hidden min-h-64 sm:min-h-96 lg:min-h-0">
                     <AnimatePresence mode="wait" custom={direction}>
                         <motion.div
                             key={project.id}

@@ -25,7 +25,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
             <div className="absolute inset-0 bg-black/60"/>
 
             <div className="absolute flex flex-col justify-between py-6 px-10 md:px-16 text-white h-full w-full">
-                <h6 className="text-lg md:text-xl lg:text-2xl text-center">
+                <h6 className="text-center">
                     {title}
                 </h6>
                 
@@ -47,7 +47,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                                 group-hover:opacity-100 
                                 group-hover:translate-y-1
                                 group-hover:max-h-40
-                                text-sm md:text-md
+                                text-sm sm:text-md
                             "
                         >
                             {description}

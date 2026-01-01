@@ -9,12 +9,16 @@ export default function OurProjectsHighlight() {
     return (
         <VerticalFadeIn>
             <div className="flex flex-col gap-20 w-full items-center">
-                <div className="flex gap-4 items-center container">
-                    <FlowerIcon/>
-                    <h4 className="text-primary">Our Projects</h4>
+                <div className="flex flex-row gap-2 md:gap-4 items-center container mx-auto px-4">
+                    <div className="flex gap-4 items-center">
+                        <FlowerIcon />
+                        <h4 className="text-primary whitespace-nowrap">Our Projects</h4>
+                    </div>
                     <Line />
                 </div>
-                <ProjectSlideshow />
+                <div className="w-full">
+                    <ProjectSlideshow />
+                </div>
             </div>
         </VerticalFadeIn>
     )

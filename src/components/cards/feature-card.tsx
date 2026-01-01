@@ -28,7 +28,7 @@ export default function FeatureCard({ icon, title, description, orientation = "h
             <CardContent className={cardContentStyle}>
                 <Icon icon={icon} className="text-primary text-4xl" />
                 <div className={textStyle}>
-                    <h6 className="text-lg md:text-xl lg:text-2xl">{title}</h6>
+                    <h6>{title}</h6>
                     <p>{description}</p>
                 </div>
             </CardContent>

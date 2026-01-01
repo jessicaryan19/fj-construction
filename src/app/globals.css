@@ -125,7 +125,7 @@
     @apply text-8xl font-bold leading-tight;
   }
   h2 {
-    @apply text-7xl font-bold leading-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
   }
   h3 {
     @apply text-6xl font-semibold leading-tight;
@@ -137,6 +137,6 @@
     @apply text-4xl font-semibold leading-tight;
   }
   h6 {
-    @apply text-2xl font-semibold leading-tight;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold leading-tight;
   }
 }
