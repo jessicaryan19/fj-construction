@@ -27,8 +27,8 @@ export default function AboutUsSection() {
     }]
 
     return (
-        <div className="flex gap-14 w-full container">
-            <div className="flex-none w-1/3 rounded-3xl overflow-hidden bg-white">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-14 w-full container px-4">
+            <div className="w-full lg:flex-none lg:w-1/3 h-64 md:h-96 lg:h-auto rounded-3xl overflow-hidden bg-white">
                 <VerticalFadeIn className="w-full h-full">
                     <Carousel
                         className="h-full w-full"
@@ -60,18 +60,20 @@ export default function AboutUsSection() {
 
             </div>
 
-            <VerticalFadeIn className="flex-1 flex flex-col gap-12 text-primary h-full">
+            <VerticalFadeIn className="flex-1 flex flex-col gap-8 md:gap-12 text-primary h-full">
                 <div className="flex flex-col gap-4">
-                    <div className="flex gap-4 items-center">
-                        <FlowerIcon />
-                        <h1>FJ Constructions</h1>
+                    <div className="flex flex-row gap-2 md:gap-4 items-center">
+                        <div className="flex gap-4 items-center">
+                            <FlowerIcon />
+                            <h1 className="text-2xl md:text-5xl whitespace-nowrap">FJ Constructions</h1>
+                        </div>
                         <Line />
                     </div>
                     <p>is a Bali-based construction company providing reliable, high-quality, and design-driven construction services for residential, villa, and commercial projects.</p>
                 </div>
 
                 <h3>Our Core Strengths:</h3>
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     {
                         coreStrengths.map((strength, index) => (
                             <VerticalFadeIn key={strength.title} delay={index * 0.1}>

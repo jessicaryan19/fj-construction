@@ -21,6 +21,7 @@ export default function Navbar() {
         return pathname === "/" || pathname.startsWith("/projects/") || pathname === "/contact-us";
     });
     const [isNavigating, setIsNavigating] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         setIsNavigating(true);
@@ -67,16 +68,29 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY, pathname]);
 
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    }, [isMobileMenuOpen]);
+
+    const handleLinkClick = (name) => {
+        setActive(name);
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <AnimatePresence mode="wait">
             <motion.nav
-                className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isAboveHero ? "bg-transparent text-white" : "bg-white text-primary"
+                className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300 ${isAboveHero ? "bg-transparent text-white" : "bg-white text-primary"
                     }`}
                 initial={{ y: 0 }}
                 animate={{ y: show ? 0 : -125 }}
                 transition={{ duration: 0.3 }}
             >
-                <div className="container mx-auto flex justify-between items-center py-4">
+                <div className="container mx-auto flex justify-between items-center py-4 px-4">
                     <Image
                         src={isAboveHero ? "/logo/logo-white.svg" : "/logo/logo-primary.svg"}
                         alt="FJ Constructions"
@@ -85,9 +99,10 @@ export default function Navbar() {
                         className={isAboveHero ? "filter brightness-0 invert" : ""}
                     />
 
-                    <ul className="flex gap-10 relative">
+                    {/* Desktop Menu */}
+                    <ul className="hidden md:flex lg:gap-10 gap-5 relative">
                         {routes.map((item) => (
-                            <li key={item.name} className="relative">
+                            <li key={`navbar-${item.name}`} className="relative">
                                 <Link
                                     href={item.href}
                                     className={`focus:outline-none font-sans transition-all hover:font-bold ${active === item.name ? "font-bold" : "font-normal"
@@ -111,8 +126,64 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
+
+                    {/* Hamburger Button */}
+                    <button
+                        className="md:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <span
+                            className={`block w-6 h-0.5 mb-1.5 transition-all ${isAboveHero ? "bg-white" : "bg-primary"
+                                } ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+                        />
+                        <span
+                            className={`block w-6 h-0.5 mb-1.5 transition-all ${isAboveHero ? "bg-white" : "bg-primary"
+                                } ${isMobileMenuOpen ? "opacity-0" : ""}`}
+                        />
+                        <span
+                            className={`block w-6 h-0.5 transition-all ${isAboveHero ? "bg-white" : "bg-primary"
+                                } ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                        />
+                    </button>
                 </div>
             </motion.nav>
+
+            {isMobileMenuOpen && (
+                <>
+                    {/* Backdrop */}
+                    <motion.div
+                        className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.5 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    />
+
+                    {/* Sidebar */}
+                    <motion.div
+                        className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 md:hidden"
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                        <div className="flex flex-col p-8 pt-20">
+                            {routes.map((item) => (
+                                <Link
+                                    key={`sidebar-${item.name}`}
+                                    href={item.href}
+                                    className={`py-4 text-primary font-sans transition-all hover:font-bold border-b border-gray-200 ${active === item.name ? "font-bold" : "font-normal"
+                                        }`}
+                                    onClick={() => handleLinkClick(item.name)}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </motion.div>
+                </>
+            )}
         </AnimatePresence>
     );
 }
