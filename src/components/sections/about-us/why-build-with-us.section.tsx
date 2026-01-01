@@ -5,7 +5,7 @@ import VerticalFadeIn from "@/components/animations/vertical-fade-in"
 export default function WhyBuildWithUs() {
     return (
         <div className="container flex flex-col gap-20">
-            <h1 className="text-primary text-center">Why Build with Us?</h1>
+            <h4 className="text-primary text-center">Why Build with Us?</h4>
             <div className="grid grid-cols-3 gap-8">
                 {
                     whyBuildWithUsData.map((item, index) => (

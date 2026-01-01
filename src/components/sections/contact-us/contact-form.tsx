@@ -21,8 +21,8 @@ export default function ContactForm() {
                 <div className="absolute inset-0 bg-black/50" />
                 <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/40 to-primary/0" />
                 <div className="absolute inset-0 flex flex-col gap-10 justify-center z-10 p-12 text-white">
-                    <h1 className="text-7xl">Have a Vision in Mind?</h1>
-                    <h1>Tell us about your dream</h1>
+                    <h2 className="text-white">Have a Vision in Mind?</h2>
+                    <h4>Tell us about your dream</h4>
                 </div>
             </VerticalFadeIn>
 

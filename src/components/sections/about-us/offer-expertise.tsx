@@ -5,7 +5,7 @@ import VerticalFadeIn from "@/components/animations/vertical-fade-in"
 export default function OfferExpertise() {
     return (
         <div className="container flex flex-col gap-12 md:gap-20 px-4">
-            <h1 className="text-primary text-center text-2xl md:text-4xl">We Offer Construction Expertise Accross:</h1>
+            <h4 className="text-primary text-center">We Offer Construction Expertise Accross:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {
                     servicesData.map((item, index) => (

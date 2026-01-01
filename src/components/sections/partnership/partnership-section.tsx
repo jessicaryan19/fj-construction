@@ -13,7 +13,7 @@ export default function PartnershipSection() {
             </VerticalFadeIn>
 
             <div className="flex-1 flex flex-col gap-12 text-primary h-full">
-                <h1>Why You Should Partner With Us</h1>
+                <h4>Why You Should Partner With Us</h4>
                 <div className="grid grid-cols-2 gap-10">
                     {
                         whyPartnerWithUsData.map((reason, index) => (

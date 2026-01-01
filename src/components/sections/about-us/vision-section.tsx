@@ -13,16 +13,16 @@ export default function VisionSection() {
             />
             <div className="relative w-screen container flex flex-col items-center text-primary py-20">
                 <VerticalFadeIn className="flex flex-col w-full gap-2">
-                    <h1 className="font-medium">We believe</h1>
-                    <h1 className="uppercase">Great Projects</h1>
+                    <h4 className="font-medium">We believe</h4>
+                    <h2 className="uppercase">Great Projects</h2>
                 </VerticalFadeIn>
                 <VerticalFadeIn delay={0.1} className="flex flex-col w-full items-end gap-2">
-                    <h1 className="font-medium">are built through</h1>
-                    <h1 className="underline">strong collaboration.</h1>
+                    <h4 className="font-medium">are built through</h4>
+                    <h4 className="underline">strong collaboration.</h4>
                 </VerticalFadeIn>
 
                 <VerticalFadeIn delay={0.2}>
-                    <h1 className="uppercase text-7xl py-20 text-center">Our Vision Is</h1>
+                    <h2 className="uppercase py-20 text-center">Our Vision Is</h2>
                 </VerticalFadeIn>
 
                 <VerticalFadeIn className="relative w-full" delay={0.1}>
@@ -41,9 +41,9 @@ export default function VisionSection() {
                             />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center px-54 text-center">
-                            <h1 className="font-medium text-center">
+                            <h4 className="font-medium text-center">
                                 To create a network of <u>trusted partners</u> that share the same goal, delivering <u>outstanding result</u> with integrity and efficiency.
-                            </h1>
+                            </h4>
                         </div>
                     </VerticalFadeIn>
 

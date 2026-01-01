@@ -13,7 +13,7 @@ export default function AboutUs() {
 
                 <div className="container flex flex-col gap-20">
                     <VerticalFadeIn>
-                        <h1 className="text-primary">About Us</h1>
+                        <h4 className="text-primary">About Us</h4>
                     </VerticalFadeIn>
                     <AboutUsSection />
                 </div>

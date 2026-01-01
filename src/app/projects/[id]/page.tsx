@@ -32,7 +32,7 @@ export default async function ProjectDetails({
                 </div>
 
                 <VerticalFadeIn className="flex flex-col gap-20 w-full items-center">
-                    <h1 className="text-primary">Unlock More of Our Projects</h1>
+                    <h4 className="text-primary">Unlock More of Our Projects</h4>
                     <ProjectSlideshow startIndex={index + 1} />
                 </VerticalFadeIn>
             </main>

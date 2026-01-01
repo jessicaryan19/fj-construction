@@ -9,7 +9,7 @@ import { testimonialsData } from "@/data/testimonials";
 import GlassContainer from "@/components/ui/glass-container";
 import RichTextRenderer from "@/components/ui/rich-text";
 import VerticalFadeIn from "@/components/animations/vertical-fade-in";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 export default function TestimonialsSection() {
     const [api, setApi] = useState<CarouselApi>()
@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <VerticalFadeIn className="flex flex-col gap-20">
                 <div className="flex gap-4 items-center">
                     <Line />
-                    <h1 className="text-primary">What they say about us</h1>
+                    <h4 className="text-primary">What they say about us</h4>
                 </div>
 
                 <div className="relative bg-primary rounded-3xl pb-10 overflow-hidden">
@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
                                                 <div className="bg-white rounded-full">
                                                     <Icon icon="gg:profile" className="text-secondary text-8xl" />
                                                 </div>
-                                                <h2 className="text-white text-center font-medium">{testimonial.name}</h2>
+                                                <h5 className="text-white text-center font-medium">{testimonial.name}</h5>
                                             </div>
                                             <GlassContainer className="p-12 gap-4">
                                                 <Icon icon="fa-solid:quote-left" className="absolute text-secondary text-6xl -top-6 -left-6" />

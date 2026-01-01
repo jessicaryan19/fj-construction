@@ -25,9 +25,9 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
             <div className="absolute inset-0 bg-black/60"/>
 
             <div className="absolute flex flex-col justify-between py-6 px-16 text-white h-full w-full">
-                <h3 className="text-center">
+                <h6 className="text-center">
                     {title}
-                </h3>
+                </h6>
                 
                 <div className="flex flex-col gap-2 items-center">
                     <Icon

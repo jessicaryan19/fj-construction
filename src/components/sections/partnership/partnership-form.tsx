@@ -27,8 +27,8 @@ export default function PartnershipForm() {
             <div className="flex justify-center items-center py-20">
                 <div className="flex justify-between items-center container">
                     <VerticalFadeIn className="flex flex-col flex-1 gap-10">
-                        <h1 className="text-white text-7xl">Ready to Partner?</h1>
-                        <h1 className="text-white">Tell us how you’d like to collaborate.</h1>
+                        <h2 className="text-white">Ready to Partner?</h2>
+                        <h4 className="text-white">Tell us how you’d like to collaborate.</h4>
                     </VerticalFadeIn>
 
                     <VerticalFadeIn className="w-1/2">

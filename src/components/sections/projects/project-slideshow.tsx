@@ -89,12 +89,12 @@ export default function ProjectSlideshow({
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                     className="text-right"
                                 >
-                                    <h1 className="text-secondary/60 font-medium">
+                                    <h4 className="text-secondary/60 font-medium">
                                         {project.location}
-                                    </h1>
-                                    <div className="text-7xl text-secondary uppercase">
+                                    </h4>
+                                    <h2 className="text-secondary uppercase">
                                         {project.name}
-                                    </div>
+                                    </h2>
                                 </motion.div>
                             </AnimatePresence>
 

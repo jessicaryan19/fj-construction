@@ -10,7 +10,7 @@ export default function Projects() {
             <main className="min-h-screen w-full flex flex-col gap-20 pt-40 pb-10 items-center bg-white dark:bg-black">
                 <VerticalFadeIn className="flex gap-4 items-center container">
                     <FlowerIcon/>
-                    <h1 className="text-primary">Our Proud Projects</h1>
+                    <h4 className="text-primary">Our Proud Projects</h4>
                 </VerticalFadeIn>
 
                 <div className="container grid grid-cols-2 gap-16">

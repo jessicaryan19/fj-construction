@@ -26,7 +26,7 @@ export default function GlassCard({
                 <div className="flex flex-col w-full py-5">
                     {link && <Link href={link} className="underline text-xl">{linkName}</Link>}
                     <p>{description}</p>
-                    <h2>{title}</h2>
+                    <h5>{title}</h5>
                 </div>
             </VerticalFadeIn>
         </GlassContainer>

@@ -120,10 +120,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {iconDecorator[index]}
                 <div className="flex items-center">
                   <div className="flex flex-col gap-2 p-4 border-r-2 border-primary max-w-md">
-                    <h3 className="text-right">{item.title}</h3>
+                    <h6 className="text-right">{item.title}</h6>
                     <p className="text-right">{item.description}</p>
                   </div>
-                  <h1 className="font-medium p-4">{index + 1}</h1>
+                  <h4 className="font-medium p-4" aria-hidden="true">{index + 1}</h4>
                 </div>
               </div>
             </div>
@@ -157,9 +157,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className={index % 2 === 1 ? "flex" : "opacity-0"}>
               <div className="w-full flex justify-start items-center transition-opacity text-primary relative">
                 <div className="flex items-center">
-                  <h1 className="font-medium p-4">{index + 1}</h1>
+                  <h4 className="font-medium p-4" aria-hidden="true">{index + 1}</h4>
                   <div className="flex flex-col gap-2 p-4 border-l-2 border-primary">
-                    <h3>{item.title}</h3>
+                    <h6>{item.title}</h6>
                     <p>{item.description}</p>
                   </div>
                 </div>

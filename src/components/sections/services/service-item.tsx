@@ -28,10 +28,10 @@ export default function ServiceItem({
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/40 to-primary/0" />
                         <div className={`absolute bg-white text-primary py-4 px-8 ${isOdd ? 'left-0 rounded-br-3xl' : 'right-0 rounded-bl-3xl'}`}>
-                            <h2>{index + 1}</h2>
+                            <h5>{index + 1}</h5>
                         </div>
                         <div className="absolute inset-0 flex flex-col justify-end items-center z-10 pb-8">
-                            <h2 className="text-white">{service.title}</h2>
+                            <h5 className="text-white">{service.title}</h5>
                         </div>
                     </div>
 

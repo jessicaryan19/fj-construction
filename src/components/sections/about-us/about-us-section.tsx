@@ -65,14 +65,14 @@ export default function AboutUsSection() {
                     <div className="flex flex-row gap-2 md:gap-4 items-center">
                         <div className="flex gap-4 items-center">
                             <FlowerIcon />
-                            <h1 className="text-2xl md:text-5xl whitespace-nowrap">FJ Constructions</h1>
+                            <h4 className="whitespace-nowrap">FJ Constructions</h4>
                         </div>
                         <Line />
                     </div>
                     <p>is a Bali-based construction company providing reliable, high-quality, and design-driven construction services for residential, villa, and commercial projects.</p>
                 </div>
 
-                <h3>Our Core Strengths:</h3>
+                <h6>Our Core Strengths:</h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     {
                         coreStrengths.map((strength, index) => (

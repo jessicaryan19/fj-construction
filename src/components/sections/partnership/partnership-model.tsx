@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function PartnershipModels() {
     return (
         <div className="container flex flex-col gap-20 items-center">
-            <h1 className="text-primary">Our Partnership Models</h1>
+            <h4 className="text-primary">Our Partnership Models</h4>
 
             <div className="grid grid-cols-3 gap-10 w-full">
                 {partnershipModelData.map((data, index) => (
@@ -24,7 +24,7 @@ export default function PartnershipModels() {
                             />
                         </div>
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5/6 h-60 bg-primary text-white rounded-3xl p-8 z-10 flex flex-col gap-4 items-center justify-center text-center">
-                            <h3>{data.title}</h3>
+                            <h6>{data.title}</h6>
                             <p>{data.description}</p>
                         </div>
                     </VerticalFadeIn>

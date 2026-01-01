@@ -11,7 +11,7 @@ export default function OurProjectsHighlight() {
             <div className="flex flex-col gap-20 w-full items-center">
                 <div className="flex gap-4 items-center container">
                     <FlowerIcon/>
-                    <h1 className="text-primary">Our Projects</h1>
+                    <h4 className="text-primary">Our Projects</h4>
                     <Line />
                 </div>
                 <ProjectSlideshow />

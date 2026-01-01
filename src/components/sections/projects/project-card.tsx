@@ -23,7 +23,7 @@ export default function ProjectCard({
                 />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/30 transition-colors duration-500" />
                 <div className="absolute bottom-0 bg-primary/70 p-5 m-5 rounded-3xl">
-                    <h2 className="uppercase text-white">{project.name}</h2>
+                    <h5 className="uppercase text-white">{project.name}</h5>
                 </div>
                 <div className={cn(
                     "absolute bottom-0 right-0 w-28 h-28 bg-white rounded-full rounded-b-none",
@@ -41,9 +41,9 @@ export default function ProjectCard({
                     <Icon icon="weui:arrow-filled" />
                 </div>
             </div>
-            <h3 className="font-medium text-primary">
+            <h6 className="font-medium text-primary">
                 {project.shortDesc}
-            </h3>
+            </h6>
         </Link>
     )
 }

@@ -10,7 +10,7 @@ export default function Services() {
             <main className="min-h-screen w-full flex flex-col gap-20 pt-40 pb-10 items-center bg-white dark:bg-black">
 
                 <VerticalFadeIn className="container flex flex-col gap-10">
-                    <h1 className="text-primary">Services</h1>
+                    <h4 className="text-primary">Services</h4>
                     <ServicesIntroSection />
                 </VerticalFadeIn>
 
