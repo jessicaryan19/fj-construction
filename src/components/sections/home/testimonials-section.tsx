@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <VerticalFadeIn className="flex flex-col gap-20">
                 <div className="flex gap-4 items-center">
                     <Line />
-                    <h4 className="text-primary">What they say about us</h4>
+                    <h4 className="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">What they say about us</h4>
                 </div>
 
                 <div className="relative bg-primary rounded-3xl pb-10 overflow-hidden">

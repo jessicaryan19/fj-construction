@@ -72,7 +72,7 @@ export default function AboutUsSection() {
                     <p>is a Bali-based construction company providing reliable, high-quality, and design-driven construction services for residential, villa, and commercial projects.</p>
                 </div>
 
-                <h6>Our Core Strengths:</h6>
+                <h6 className="text-lg sm:text-xl md:text-xl lg:text-2xl">Our Core Strengths:</h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     {
                         coreStrengths.map((strength, index) => (

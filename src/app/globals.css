@@ -131,7 +131,7 @@
     @apply text-6xl font-semibold leading-tight;
   }
   h4 {
-    @apply text-5xl font-semibold leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight;
   }
   h5 {
     @apply text-4xl font-semibold leading-tight;

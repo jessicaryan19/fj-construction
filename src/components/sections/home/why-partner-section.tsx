@@ -7,7 +7,7 @@ export default function WhyPartnerSection() {
 
     return (
         <div className="container flex flex-col gap-20">
-            <h4 className="text-primary text-center">Why Partner with Us?</h4>
+            <h4 className="text-primary text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Why Partner with Us?</h4>
             <div className="grid grid-cols-4 gap-8">
                 {
                     whyPartnerWithUsData.map((reason, index) => (
