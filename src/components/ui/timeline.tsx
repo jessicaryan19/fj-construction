@@ -116,23 +116,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="grid grid-cols-[1fr_auto_1fr] gap-2 sm:gap-4 md:gap-6 lg:gap-10 pt-8 sm:pt-12 md:pt-16 lg:pt-24 relative"
           >
             {/* Left side - even indices */}
-            <div className={index % 2 === 0 ? "flex" : "opacity-0"}>
-              <div className="w-full flex justify-end transition-opacity text-primary relative">
-                <div className="hidden lg:block self-center">
+            <div className={index % 2 === 0 ? "flex justify-end" : "opacity-0"}>
+              <div className="flex justify-end transition-opacity text-primary relative max-w-full">
+                <div className="hidden lg:block self-center mr-4">
                   {iconDecorator[index]}
                 </div>
                 <div className="grid grid-cols-[1fr_auto] items-start">
-                  <div className="flex flex-col gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 border-r-2 border-primary max-w-xs sm:max-w-sm md:max-w-md">
-                    <h6 className="text-right">{item.title}</h6>
-                    <p className="text-right text-xs sm:text-sm md:text-base">{item.description}</p>
+                  <div className="flex flex-col gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 border-r-2 border-primary w-full min-w-0">
+                    <h6 className="text-right break-words">{item.title}</h6>
+                    <p className="text-right text-xs sm:text-sm md:text-base break-words">{item.description}</p>
                   </div>
-                  <h4 className="font-medium p-2 sm:p-3 md:p-4 self-center" aria-hidden="true">{index + 1}</h4>
+                  <h4 className="font-medium p-2 sm:p-3 md:p-4 self-center whitespace-nowrap" aria-hidden="true">{index + 1}</h4>
                 </div>
               </div>
             </div>
 
             {/* Center dot */}
-            <div className="flex justify-center items-start">
+            <div className="flex justify-center items-start shrink-0">
               <div className="h-full flex items-center">
                 <motion.div
                   className={`z-10 flex h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 items-center justify-center rounded-full ${activeIndex !== undefined && index <= activeIndex ? "bg-primary" : "bg-secondary"
@@ -161,16 +161,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             {/* Right side - odd indices */}
-            <div className={index % 2 === 1 ? "flex" : "opacity-0"}>
-              <div className="w-full flex justify-start transition-opacity text-primary relative">
+            <div className={index % 2 === 1 ? "flex justify-start" : "opacity-0"}>
+              <div className="flex justify-start transition-opacity text-primary relative max-w-full">
                 <div className="grid grid-cols-[auto_1fr] items-center">
-                  <h4 className="font-medium p-2 sm:p-3 md:p-4 self-center" aria-hidden="true">{index + 1}</h4>
-                  <div className="flex flex-col gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 border-l-2 border-primary max-w-xs sm:max-w-sm md:max-w-md">
-                    <h6>{item.title}</h6>
-                    <p className="text-xs sm:text-sm md:text-base">{item.description}</p>
+                  <h4 className="font-medium p-2 sm:p-3 md:p-4 self-center whitespace-nowrap" aria-hidden="true">{index + 1}</h4>
+                  <div className="flex flex-col gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 border-l-2 border-primary w-full min-w-0">
+                    <h6 className="break-words">{item.title}</h6>
+                    <p className="text-xs sm:text-sm md:text-base break-words">{item.description}</p>
                   </div>
                 </div>
-                <div className="hidden lg:block self-center">
+                <div className="hidden lg:block self-center ml-4">
                   {iconDecorator[index]}
                 </div>
               </div>

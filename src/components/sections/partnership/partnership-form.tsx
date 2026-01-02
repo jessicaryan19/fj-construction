@@ -25,13 +25,13 @@ export default function PartnershipForm() {
     return (
         <ImageBackground image="/projects/villa-goa-gong/slideshow-secondary.png">
             <div className="flex justify-center items-center py-20">
-                <div className="flex justify-between items-center container">
-                    <VerticalFadeIn className="flex flex-col flex-1 gap-10">
-                        <h2 className="text-white">Ready to Partner?</h2>
-                        <h4 className="text-white">Tell us how you’d like to collaborate.</h4>
+                <div className="flex flex-col md:flex-row justify-between items-center container gap-10 md:gap-0 px-4">
+                    <VerticalFadeIn className="flex flex-col flex-1 md:gap-10">
+                        <h2 className="text-white text-center md:text-left">Ready to Partner?</h2>
+                        <h4 className="text-white text-center md:text-left">Tell us how you’d like to collaborate.</h4>
                     </VerticalFadeIn>
 
-                    <VerticalFadeIn className="w-1/2">
+                    <VerticalFadeIn className="w-full md:w-1/2">
                         <Card className="w-full h-[800px] rounded-3xl">
                             <CardContent className="overflow-y-scroll rounded-3xl">
                                 <div className="flex flex-col gap-6 py-4">

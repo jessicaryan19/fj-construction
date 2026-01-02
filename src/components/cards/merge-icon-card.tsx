@@ -13,7 +13,7 @@ export default function MergeIconCard({
   description,
 }: MergeIconCardProps) {
   return (
-    <Card className="relative h-72 overflow-hidden rounded-3xl bg-primary">
+    <Card className="relative h-64 md:h-72 lg:h-80 overflow-hidden rounded-3xl bg-primary">
       <CardContent className="absolute bottom-0 flex w-full flex-col items-center p-0">
         <Icon
           icon={icon}

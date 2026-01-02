@@ -4,9 +4,9 @@ import { partnershipBenefitsData } from "@/data/partnership";
 
 export default function PartnershipBenefits() {
     return (
-        <div className="container flex flex-col gap-20 items-center">
+        <div className="container flex flex-col gap-10 lg:gap-20 items-center">
             <h4 className="text-primary">The Benefits You Will Get</h4>
-            <div className="grid grid-cols-2 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full px-4">
                 {
                     partnershipBenefitsData.map((item, index) => (
                         <VerticalFadeIn key={item.title} delay={index * 0.1}>
