@@ -11,9 +11,9 @@ export default function AboutUs() {
         <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
             <main className="min-h-screen w-full flex flex-col gap-32 pt-40 pb-10 items-center bg-white dark:bg-black">
 
-                <div className="container flex flex-col gap-20">
+                <div className="container flex flex-col gap-10 lg:gap-20">
                     <VerticalFadeIn>
-                        <h4 className="text-primary">About Us</h4>
+                        <h4 className="text-primary px-4">About Us</h4>
                     </VerticalFadeIn>
                     <AboutUsSection />
                 </div>

@@ -11,7 +11,7 @@ export default function VisionSection() {
                     background: 'radial-gradient(circle at center, var(--secondary) 0%, transparent 70%)'
                 }}
             />
-            <div className="relative w-screen container flex flex-col items-center text-primary py-20">
+            <div className="relative w-screen container flex flex-col gap-4 items-center text-primary py-20 px-4">
                 <VerticalFadeIn className="flex flex-col w-full gap-2">
                     <h4 className="font-medium">We believe</h4>
                     <h2 className="uppercase">Great Projects</h2>
@@ -26,10 +26,15 @@ export default function VisionSection() {
                 </VerticalFadeIn>
 
                 <VerticalFadeIn className="relative w-full" delay={0.1}>
-                    <EightPointStarIcon className="absolute left-48" />
-                    <EightPointStarIcon className="absolute bottom-16 right-32" />
+                    <EightPointStarIcon className="hidden lg:absolute left-48" />
+                    <EightPointStarIcon className="hidden lg:absolute bottom-16 right-32" />
+
                     <VerticalFadeIn className="w-full" delay={0.3}>
-                        <svg viewBox="0 0 946 400" className="w-full h-full" aria-hidden >
+                        <svg
+                            viewBox="0 0 946 400"
+                            className="hidden lg:block inset-0 w-full h-full"
+                            aria-hidden
+                        >
                             <ellipse
                                 cx="473"
                                 cy="200"
@@ -40,17 +45,33 @@ export default function VisionSection() {
                                 strokeWidth="3"
                             />
                         </svg>
-                        <div className="absolute inset-0 flex items-center justify-center px-54 text-center">
-                            <h4 className="font-medium text-center">
+                        <svg
+                            viewBox="0 0 200 120"
+                            className="block lg:hidden inset-0 w-full h-full"
+                            aria-hidden
+                        >
+                            <ellipse
+                                cx="100"
+                                cy="60"
+                                rx="90"
+                                ry="55"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1"
+                            />
+                        </svg>
+
+                        <div className="absolute inset-0 flex items-center justify-center px-16 sm:px-20 lg:px-54 text-center">
+                            <h5 className="font-medium text-center">
                                 To create a network of <u>trusted partners</u> that share the same goal, delivering <u>outstanding result</u> with integrity and efficiency.
-                            </h4>
+                            </h5>
                         </div>
                     </VerticalFadeIn>
 
-                    <SparkleIcon className="absolute right-64 top-16 text-primary" width={120} height={120} />
-                    <SparkleIcon className="absolute left-64 bottom-16 text-primary" width={120} height={120} />
-                    <FlowerIcon className="absolute left-32 top-24 -rotate-20" width={120} height={120} />
-                    <FlowerIcon className="absolute -right-5 top-72" width={80} height={80} />
+                    <SparkleIcon className="hidden lg:absolute right-64 top-16 text-primary" width={120} height={120} />
+                    <SparkleIcon className="hidden lg:absolute left-64 bottom-16 text-primary" width={120} height={120} />
+                    <FlowerIcon className="hidden lg:absolute left-32 top-24 -rotate-20" width={120} height={120} />
+                    <FlowerIcon className="hidden lg:absolute -right-5 top-72" width={80} height={80} />
                 </VerticalFadeIn>
             </div>
         </div>
