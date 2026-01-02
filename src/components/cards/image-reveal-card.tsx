@@ -47,7 +47,6 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                                 group-hover:opacity-100 
                                 group-hover:translate-y-1
                                 group-hover:max-h-40
-                                text-sm sm:text-md
                             "
                         >
                             {description}

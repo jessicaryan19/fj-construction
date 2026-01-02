@@ -11,7 +11,7 @@ export default function ArrowButton({
     onClick
 }: ArrowButtonProps) {
     return (
-        <Button className="p-4" onClick={onClick}>
+        <Button className="p-4 md:p-4" onClick={onClick}>
             <Icon icon={`ep:arrow-${direction}-bold`} />
         </Button>
     )

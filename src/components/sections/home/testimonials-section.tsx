@@ -25,11 +25,11 @@ export default function TestimonialsSection() {
     }, [api])
 
     return (
-        <div className="container">
+        <div className="container px-4">
             <VerticalFadeIn className="flex flex-col gap-20">
                 <div className="flex gap-4 items-center">
                     <Line />
-                    <h4 className="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">What they say about us</h4>
+                    <h4 className="text-primary">What they say about us</h4>
                 </div>
 
                 <div className="relative bg-primary rounded-3xl pb-10 overflow-hidden">
@@ -44,28 +44,28 @@ export default function TestimonialsSection() {
                         <div className="absolute inset-0 bg-primary mix-blend-lighten"></div>
                     </div>
 
-                    <div className="flex flex-col pt-8">
+                    <div className="flex flex-col pt-4 md:pt-8 gap-2 md:gap-0">
                         <Carousel setApi={setApi} opts={{ loop: true, duration: 45 }}>
                             <CarouselContent>
                                 {testimonialsData.map((testimonial, idx) => (
-                                    <CarouselItem key={testimonial.name} className="flex gap-20 px-20 py-10 items-center">
+                                    <CarouselItem key={testimonial.name} className="flex gap-20 px-10 md:px-20 py-5 md:py-10 items-center">
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: current === idx ? 1 : 0 }}
                                             transition={{ duration: 0.6, ease: "easeInOut" }}
-                                            className="flex gap-20 w-full"
+                                            className="flex flex-col md:flex-row gap-6 md:gap-20 w-full"
                                         >
-                                            <div className="flex flex-col items-center justify-center w-1/5 gap-4">
+                                            <div className="flex flex-row md:flex-col items-center justify-center w-full md:w-1/5 gap-4">
                                                 <div className="bg-white rounded-full">
-                                                    <Icon icon="gg:profile" className="text-secondary text-8xl" />
+                                                    <Icon icon="gg:profile" className="text-secondary text-4xl md:text-8xl" />
                                                 </div>
                                                 <h5 className="text-white text-center font-medium">{testimonial.name}</h5>
                                             </div>
-                                            <GlassContainer className="p-12 gap-4">
-                                                <Icon icon="fa-solid:quote-left" className="absolute text-secondary text-6xl -top-6 -left-6" />
-                                                <Icon icon="fa-solid:quote-right" className="absolute text-secondary text-6xl -bottom-6 -right-6" />
-                                                <div className="flex flex-col gap-2 justify-center h-full">
-                                                    <RichTextRenderer content={testimonial.parts} className="text-xl" />
+                                            <GlassContainer className="p-6 md:p-12 gap-2 md:gap-4">
+                                                <Icon icon="fa-solid:quote-left" className="absolute text-secondary text-3xl md:text-6xl -top-3 md:-top-6 -left-3 md:-left-6" />
+                                                <Icon icon="fa-solid:quote-right" className="absolute text-secondary text-3xl md:text-6xl -bottom-3 md:-bottom-6 -right-3 md:-right-6" />
+                                                <div className="flex flex-col gap-1 md:gap-2 justify-center h-full">
+                                                    <RichTextRenderer content={testimonial.parts} className="text-sm sm:text-md md:text-lg lg:text-xl" />
                                                 </div>
                                             </GlassContainer>
                                         </motion.div>

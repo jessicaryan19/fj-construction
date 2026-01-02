@@ -11,7 +11,7 @@ export default function ImageCTE({
     image
 }: ImageCTEProps) {
     return (
-        <VerticalFadeIn className="flex justify-center">
+        <VerticalFadeIn className="flex justify-center px-4">
             <div className="group relative container w-full h-144 rounded-3xl overflow-hidden">
                 <Image
                     src={image}
@@ -22,7 +22,7 @@ export default function ImageCTE({
                     priority
                 />
                 <div className="absolute inset-0 bg-black/50" />
-                <div className="absolute inset-0 flex flex-col justify-center items-center z-10 gap-8">
+                <div className="absolute inset-0 flex flex-col justify-center items-center z-10 gap-8 px-4">
                     {children}
                 </div>
             </div>

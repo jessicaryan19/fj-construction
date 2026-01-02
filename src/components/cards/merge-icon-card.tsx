@@ -1,22 +1,34 @@
-import { Icon } from "@iconify/react";
-import { Card, CardContent } from "../ui/card";
+import { Icon } from "@iconify/react"
+import { Card, CardContent } from "../ui/card"
 
 interface MergeIconCardProps {
-    icon: string;
-    title: string;
-    description: string;
+  icon: string
+  title: string
+  description: string
 }
 
-export default function MergeIconCard({ icon, title, description }: MergeIconCardProps) {
-    return (
-        <Card className="bg-primary rounded-3xl relative h-72 overflow-hidden">
-            <CardContent className="absolute bottom-0 p-0 flex flex-col gap-0 items-center w-full">
-                <Icon icon={icon} className="text-6xl text-white translate-y-3"/>
-                <div className="bg-white rounded-t-3xl flex flex-col gap-4 text-center text-primary py-12 w-full">
-                    <h6>{title}</h6>
-                    <p className="px-10">{description}</p>
-                </div>
-            </CardContent>
-        </Card>
-    );
+export default function MergeIconCard({
+  icon,
+  title,
+  description,
+}: MergeIconCardProps) {
+  return (
+    <Card className="relative h-72 overflow-hidden rounded-3xl bg-primary">
+      <CardContent className="absolute bottom-0 flex w-full flex-col items-center p-0">
+        <Icon
+          icon={icon}
+          className="translate-y-3 text-6xl text-white"
+        />
+
+        <div className="flex w-full flex-col py-6 items-center gap-4 rounded-t-3xl bg-white text-center text-primary">
+          <h6 className="line-clamp-2 min-h-[2.5em] leading-snug px-2">
+            {title}
+          </h6>
+          <p className="line-clamp-3 min-h-[4.5em] px-4 sm:px-6 lg:px-10 leading-relaxed">
+            {description}
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  )
 }
