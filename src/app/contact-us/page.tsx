@@ -7,16 +7,15 @@ import { socialsData } from "@/data/routes";
 export default function ContactUs() {
     return (
         <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <main className="min-h-screen w-full flex flex-col gap-32 pb-10 items-center bg-white dark:bg-black">
-
+            <main className="min-h-screen w-full flex flex-col gap-16 lg:gap-32 pb-10 items-center bg-white dark:bg-black">
                 <ImageBackground image="/about/image-2.jpg">
-                    <div className="flex flex-col items-center justify-end h-screen pb-20 pt-64">
+                    <div className="flex flex-col items-center justify-end h-screen pb-20 pt-40 md:pt-64">
                         <div className="container flex flex-col items-center justify-between flex-1">
                             <VerticalFadeIn>
-                                <h1 className="text-white text-8xl text-center">Let&apos;s Connect</h1>
+                                <h1 className="text-white text-center">Let&apos;s Connect</h1>
                             </VerticalFadeIn>
 
-                            <div className="w-full grid grid-cols-4 gap-8">
+                            <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 px-4">
                                 {Object.entries(socialsData).map(([key, value]) => (
                                     <GlassCard key={key} icon={value.icon} link={value.link} linkName={value.name} />
                                 ))}

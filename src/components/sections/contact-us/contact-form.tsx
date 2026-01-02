@@ -9,8 +9,8 @@ import Image from "next/image";
 export default function ContactForm() {
 
     return (
-        <div className="container flex gap-20">
-            <VerticalFadeIn className="relative w-1/2 rounded-3xl overflow-hidden">
+        <div className="container flex flex-col md:flex-row gap-5 md:gap-8 lg:gap-20 px-4">
+            <VerticalFadeIn className="relative w-full md:w-1/2 h-72 md:h-auto md:min-h-[600px] rounded-2xl md:rounded-3xl overflow-hidden">
                 <Image
                     src="/projects/villa-radja/dining-room.png"
                     alt=""
@@ -20,21 +20,20 @@ export default function ContactForm() {
                 />
                 <div className="absolute inset-0 bg-black/50" />
                 <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/40 to-primary/0" />
-                <div className="absolute inset-0 flex flex-col gap-10 justify-center z-10 p-12 text-white">
-                    <h2 className="text-white">Have a Vision in Mind?</h2>
-                    <h4>Tell us about your dream</h4>
+                <div className="absolute inset-0 flex flex-col gap-2 md:gap-10 justify-center z-10 p-6 sm:p-8 md:p-12 text-white">
+                    <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Have a Vision in Mind?</h2>
+                    <h4 className="text-lg sm:text-xl md:text-2xl">Tell us about your dream</h4>
                 </div>
             </VerticalFadeIn>
 
-            <VerticalFadeIn className="w-1/2" delay={0.1}>
-                <Card className="w-full rounded-3xl">
-                    <CardContent className="rounded-3xl">
-                        <div className="flex flex-col gap-6 py-4">
+            <VerticalFadeIn className="w-full md:w-1/2" delay={0.1}>
+                <Card className="w-full rounded-2xl md:rounded-3xl">
+                    <CardContent className="rounded-2xl md:rounded-3xl p-4 sm:p-6">
+                        <div className="flex flex-col gap-4 sm:gap-6 py-2 sm:py-4">
                             <Field>
                                 <FieldLabel htmlFor="name">Name</FieldLabel>
                                 <Input id="name" autoComplete="off" />
                             </Field>
-
                             <Field>
                                 <FieldLabel htmlFor="phone-number">Phone Number</FieldLabel>
                                 <Input id="phone-number" autoComplete="off" />
@@ -42,7 +41,7 @@ export default function ContactForm() {
 
                             <Field>
                                 <FieldLabel htmlFor="message">Message</FieldLabel>
-                                <Textarea className="h-64" id="message" />
+                                <Textarea className="h-48 sm:h-56 md:h-64" id="message" />
                             </Field>
                             <SlidingButton text="Send Message" type="primary" />
                         </div>
