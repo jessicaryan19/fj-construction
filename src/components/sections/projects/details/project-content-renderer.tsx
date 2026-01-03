@@ -148,14 +148,14 @@ function ImageTextContent({
 function CircleText({ content }: ProjectContentRendererProps) {
     return (
         <div className="relative w-full flex justify-center py-8 sm:py-12 lg:py-16">
-            <SparkleIcon className="hidden xl:block absolute right-32 top-8 text-secondary" width={120} height={120} />
-            <SparkleIcon className="hidden xl:block absolute left-32 bottom-8 text-secondary" width={120} height={120} />
+            <SparkleIcon className="absolute right-32 top-8 text-secondary" width={120} height={120} />
+            <SparkleIcon className="absolute left-32 bottom-8 text-secondary" width={120} height={120} />
 
             <div className="relative w-full max-w-6xl px-4 sm:px-8 lg:px-16">
                 <div className="relative">
                     <svg
                         viewBox="0 0 946 450"
-                        className="hidden lg:block absolute inset-0 w-full h-full"
+                        className="absolute inset-0 w-full h-full"
                         preserveAspectRatio="xMidYMid meet"
                         aria-hidden
                     >

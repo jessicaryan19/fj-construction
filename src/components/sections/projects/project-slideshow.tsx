@@ -43,11 +43,11 @@ export default function ProjectSlideshow({
         ])
     }
     const project = projectsData[index]
-    
+
     return (
         <AnimatePresence mode="wait" custom={direction}>
             <div className="flex flex-col gap-5 w-full items-center">
-                <div className="w-full h-full flex flex-col md:flex-row overflow-hidden">
+                <div className="w-full h-full flex flex-col-reverse md:flex-row overflow-hidden">
                     <div className="relative bg-primary w-full md:w-2/3 overflow-hidden">
                         <div className="absolute inset-0 opacity-20">
                             <Image
@@ -79,7 +79,6 @@ export default function ProjectSlideshow({
                             </div>
 
                             <div className="flex flex-col gap-4">
-
                                 <motion.div
                                     key={project.name}
                                     custom={direction}

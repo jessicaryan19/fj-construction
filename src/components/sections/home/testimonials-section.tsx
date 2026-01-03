@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
                         <Carousel setApi={setApi} opts={{ loop: true, duration: 45 }}>
                             <CarouselContent>
                                 {testimonialsData.map((testimonial, idx) => (
-                                    <CarouselItem key={testimonial.name} className="flex gap-20 px-10 md:px-20 py-5 md:py-10 items-center">
+                                    <CarouselItem key={testimonial.name} className="flex gap-20 px-10 md:px-20 py-5 md:py-10 items-start">
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: current === idx ? 1 : 0 }}

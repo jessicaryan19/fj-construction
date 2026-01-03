@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Footer() {
     const [active, setActive] = useState("Home");
     return (
-        <footer className="container mx-auto bg-white flex flex-col lg:flex-row justify-between gap-10 lg:gap-40 font-sans items-center lg:items-start py-10 mt-24 px-4">
+        <footer className="container mx-auto bg-white flex flex-col lg:flex-row justify-between gap-4 md:gap-10 lg:gap-40 font-sans items-center lg:items-start py-10 mt-24 px-4">
             <div className="flex flex-col items-center gap-4">
                 <Image src='/logo/logo-2-primary.svg' alt="FJ Constructions" width={125} height={50} />
                 <div className="flex items-center gap-8">
@@ -22,10 +22,9 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col flex-1 w-full lg:w-auto text-primary">
-                {/* Navigate Section - Hidden on mobile */}
-                <div className="hidden md:flex py-5 border-b border-primary">
-                    <p className="uppercase font-bold w-1/4">Navigate</p>
-                    <div className="flex flex-1 justify-between">
+                <div className="flex flex-col md:flex-row py-5 gap-4 md:gap-0 border-b border-primary">
+                    <p className="uppercase font-bold md:w-1/4">Navigate</p>
+                    <div className="grid grid-cols-3 gap-2 md:gap-0 md:flex md:flex-1 justify-between">
                         {routes.map((item) => (
                             <Link
                                 key={item.name}
@@ -39,10 +38,10 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                     <div className="flex flex-col md:flex-row py-5 gap-4 md:gap-0">
-                        <p className="uppercase font-bold md:w-1/4 text-center md:text-left">Contact Us On</p>
-                        <div className="flex flex-col md:flex-row flex-1 gap-4 md:gap-10 items-center md:items-start">
+                        <p className="uppercase font-bold md:w-1/4">Contact Us On</p>
+                        <div className="flex flex-col md:flex-row flex-1 gap-2 md:gap-10">
                             <Link href={socialsData.email.link} className="underline">{socialsData.email.name}</Link>
                             <Link href={socialsData.whatsapp.link} className="underline">{socialsData.whatsapp.name}</Link>
                         </div>
