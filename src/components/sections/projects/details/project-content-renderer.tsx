@@ -147,44 +147,52 @@ function ImageTextContent({
 
 function CircleText({ content }: ProjectContentRendererProps) {
     return (
-        <div className="relative w-full flex justify-center py-8 sm:py-12 lg:py-16">
-            <SparkleIcon className="absolute right-32 top-8 text-secondary" width={120} height={120} />
-            <SparkleIcon className="absolute left-32 bottom-8 text-secondary" width={120} height={120} />
+        <div className="relative w-full flex justify-center py-6 sm:py-10 lg:py-14">
+            {/* Sparkle icons with animations */}
+            <SparkleIcon
+                className="absolute right-2 sm:right-16 lg:right-32 top-2 sm:top-8 text-secondary animate-sparkle-float w-8 h-8 sm:w-16 sm:h-16 lg:w-[120px] lg:h-[120px]"
+            />
+            <SparkleIcon
+                className="absolute left-2 sm:left-16 lg:left-32 bottom-2 sm:bottom-8 text-secondary animate-sparkle-pulse w-8 h-8 sm:w-16 sm:h-16 lg:w-[120px] lg:h-[120px]"
+            />
 
-            <div className="relative w-full max-w-6xl px-4 sm:px-8 lg:px-16">
-                <div className="relative">
-                    <svg
-                        viewBox="0 0 946 450"
-                        className="absolute inset-0 w-full h-full"
-                        preserveAspectRatio="xMidYMid meet"
-                        aria-hidden
-                    >
-                        <ellipse
-                            cx="473"
-                            cy="225"
-                            rx="460"
-                            ry="220"
-                            fill="#334B2C"
-                        />
-                        <ellipse
-                            cx="473"
-                            cy="225"
-                            rx="460"
-                            ry="180"
-                            fill="none"
-                            stroke="#9EB4AB"
-                            strokeWidth="3"
-                            transform="rotate(-12 473 225)"
-                        />
-                    </svg>
+            <div className="relative w-full px-2 sm:px-8">
+                {/* SVG container with proper aspect ratio */}
+                <svg
+                    viewBox="0 0 946 450"
+                    className="w-full h-auto"
+                    preserveAspectRatio="xMidYMid meet"
+                    aria-hidden="true"
+                >
+                    {/* Main filled ellipse */}
+                    <ellipse
+                        cx="473"
+                        cy="225"
+                        rx="460"
+                        ry="200"
+                        fill="#334B2C"
+                    />
+                    {/* Decorative stroke ellipse */}
+                    <ellipse
+                        cx="473"
+                        cy="225"
+                        rx="440"
+                        ry="160"
+                        fill="none"
+                        stroke="#9EB4AB"
+                        strokeWidth="3"
+                        transform="rotate(-12 473 225)"
+                    />
+                </svg>
 
-                    <div className="relative flex justify-center text-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24">
-                        <div className="text-white max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-3xl break-words">
+                <div className="absolute inset-0 flex items-center justify-center px-8 sm:px-16 lg:px-24 py-4">
+                    <div className="text-white text-center max-w-[80%] sm:max-w-[70%] lg:max-w-[60%]">
+                        <div className="text-sm xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed font-medium">
                             <RichTextRenderer content={content.text} />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
