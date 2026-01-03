@@ -3,6 +3,18 @@ import GlassCard from "@/components/cards/glass-card";
 import ImageBackground from "@/components/layout/image-background";
 import ContactForm from "@/components/sections/contact-us/contact-form";
 import { socialsData } from "@/data/routes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description:
+        "Get in touch with FJ Constructions for your villa or construction project in Bali. Request a consultation, discuss your vision, and start building your dream property today.",
+    openGraph: {
+        title: "Contact Us | FJ Constructions",
+        description:
+            "Get in touch with FJ Constructions for your villa or construction project in Bali.",
+    },
+};
 
 export default function ContactUs() {
     return (

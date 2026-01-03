@@ -7,6 +7,18 @@ import OurProjectsHighlight from "@/components/sections/home/our-projects-highli
 import TestimonialsSection from "@/components/sections/home/testimonials-section";
 import WhyPartnerSection from "@/components/sections/home/why-partner-section";
 import WhyUsSection from "@/components/sections/about-us/why-us-section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "FJ Constructions | Premium Villa & Construction Services in Bali",
+  description:
+    "Build your dream villa in Bali with FJ Constructions. We specialize in luxury villa development, modern tropical architecture, and quality construction services. Expert craftsmanship since establishment.",
+  openGraph: {
+    title: "FJ Constructions | Premium Villa & Construction Services in Bali",
+    description:
+      "Build your dream villa in Bali with FJ Constructions. Expert craftsmanship in luxury villa development and modern tropical architecture.",
+  },
+};
 
 export default function Home() {
   return (
@@ -17,12 +29,12 @@ export default function Home() {
 
         <div className="w-full flex flex-col gap-10 items-center">
           <WhyUsSection />
-          <SlidingButton text="Get to Know Us More" type="primary" href="/about-us"/>
+          <SlidingButton text="Get to Know Us More" type="primary" href="/about-us" />
         </div>
 
         <div className="w-full flex flex-col gap-10 items-center">
           <OfferExpertise />
-          <SlidingButton text="Explore Our Services" type="primary" href="/services"/>
+          <SlidingButton text="Explore Our Services" type="primary" href="/services" />
         </div>
 
         <OurProjectsHighlight />

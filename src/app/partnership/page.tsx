@@ -4,6 +4,18 @@ import PartnershipModels from "@/components/sections/partnership/partnership-mod
 import PartnershipSection from "@/components/sections/partnership/partnership-section";
 import PartnershipForm from "@/components/sections/partnership/partnership-form";
 import PartnershipBenefits from "@/components/sections/partnership/partnership-benefits";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Partnership",
+    description:
+        "Partner with FJ Constructions for villa development and property investment in Bali. Explore our partnership models, benefits, and collaboration opportunities for successful projects.",
+    openGraph: {
+        title: "Partnership | FJ Constructions",
+        description:
+            "Partner with FJ Constructions for villa development and property investment in Bali.",
+    },
+};
 
 export default function Partnership() {
     return (
@@ -14,12 +26,12 @@ export default function Partnership() {
                     <PartnershipSection />
                 </div>
 
-                <PartnershipBenefits/>
-                <PartnershipModels/>
-                <PartnershipTimeline/>
+                <PartnershipBenefits />
+                <PartnershipModels />
+                <PartnershipTimeline />
 
-                <TestimonialsSection/>
-                <PartnershipForm/>
+                <TestimonialsSection />
+                <PartnershipForm />
             </main>
         </div>
     )
