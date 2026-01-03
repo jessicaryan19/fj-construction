@@ -20,16 +20,16 @@ export default function ProjectHero({
 
     return (
         <ImageBackground image={`/projects/${project.id}/${project.landingCover}`} opacity={30}>
-            <div className="flex flex-col items-center justify-end h-screen pb-20 pt-64">
-                <div className="container flex flex-col flex-1 justify-between">
+            <div className="flex flex-col items-center justify-end h-screen pb-20 pt-40 md:pt-64">
+                <div className="container flex flex-col flex-1 justify-between px-4">
                     <VerticalFadeIn>
                         <SlidingButton text="Back" href="/projects" direction="left" initialWidth="65%" />
                     </VerticalFadeIn>
                     <div className="flex flex-col gap-10">
                         <VerticalFadeIn>
-                            <h1 className="text-8xl text-white uppercase">{project.name}</h1>
+                            <h1 className="text-white uppercase">{project.name}</h1>
                         </VerticalFadeIn>
-                        <div className="w-full grid grid-cols-5 gap-8">
+                        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 xl:gap-8">
                             {projectData.map((item) => (
                                 <GlassCard key={item.title} icon={item.icon} title={item.title} description={item.description} />
                             ))}
