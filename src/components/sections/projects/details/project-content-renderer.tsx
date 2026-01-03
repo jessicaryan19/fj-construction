@@ -108,8 +108,8 @@ function ThreeImage({
     content,
 }: ProjectContentRendererProps) {
     return (
-        <div className="flex gap-10" >
-            <div className="flex flex-col w-2/3 gap-10">
+        <div className="flex gap-5 md:gap-10" >
+            <div className="flex flex-col w-1/2 md:w-2/3 gap-5 md:gap-10">
                 <div className="relative aspect-video" >
                     <ImageRoundedCard source={`/projects/${project.id}/${content.images[0]}`} />
                 </div >
@@ -117,7 +117,7 @@ function ThreeImage({
                     <ImageRoundedCard source={`/projects/${project.id}/${content.images[1]}`} />
                 </div >
             </div>
-            <div className="relative flex-1 pt-40 pb-20 aspect-9/16">
+            <div className="relative flex-1 md:pt-40 md:pb-20 md:aspect-9/16">
                 <ImageRoundedCard
                     source={`/projects/${project.id}/${content.images[2]}`}
                 />
