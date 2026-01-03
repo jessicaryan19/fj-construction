@@ -66,6 +66,23 @@ export default function ProjectSlideshow({
                                     <ArrowButton onClick={() => paginate(-1)} />
                                     <ArrowButton direction="right" onClick={() => paginate(1)} />
                                 </div>
+                                <motion.div
+                                    key={project.name}
+                                    custom={direction}
+                                    variants={slideVariants}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                                    className="text-right block md:hidden w-full"
+                                >
+                                    <h4 className="text-secondary/60 font-medium px-4 md:px-0">
+                                        {project.location}
+                                    </h4>
+                                    <h2 className="text-secondary uppercase px-4 md:px-0">
+                                        {project.name}
+                                    </h2>
+                                </motion.div>
                                 <div className="flex flex-row gap-3 sm:gap-4 w-auto px-4">
                                     <Button size="custom" onClick={() => router.push(`/projects/${project.id}`)} className="w-auto">
                                         Learn Details
@@ -87,7 +104,7 @@ export default function ProjectSlideshow({
                                     animate="center"
                                     exit="exit"
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                                    className="text-right"
+                                    className="text-right hidden md:block"
                                 >
                                     <h4 className="text-secondary/60 font-medium px-4 sm:px-0">
                                         {project.location}
