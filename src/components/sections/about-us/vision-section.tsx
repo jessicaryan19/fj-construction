@@ -12,7 +12,7 @@ export default function VisionSection() {
                 }}
             />
 
-            <div className="relative w-screen flex flex-col gap-6 items-center text-primary py-16 md:py-24 px-4">
+            <div className="relative w-screen flex flex-col gap-6 items-center text-primary px-4">
                 <VerticalFadeIn className="flex flex-col w-full gap-1 container">
                     <h4 className="font-sans font-medium tracking-wide">We believe</h4>
                     <h2 className="uppercase tracking-tight">
