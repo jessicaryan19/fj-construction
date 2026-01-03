@@ -3,10 +3,34 @@ import ProjectContentRenderer from "@/components/sections/projects/details/proje
 import ProjectHero from "@/components/sections/projects/project-hero"
 import ProjectSlideshow from "@/components/sections/projects/project-slideshow"
 import { projectsData } from "@/data/projects"
+import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 interface ProjectDetailsProps {
     params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({
+    params,
+}: ProjectDetailsProps): Promise<Metadata> {
+    const { id } = await params
+    const project = projectsData.find((data) => data.id === id)
+
+    if (!project) {
+        return {
+            title: "Project Not Found",
+        }
+    }
+
+    return {
+        title: `${project.name} - ${project.location}`,
+        description: project.shortDesc,
+        openGraph: {
+            title: `${project.name} - ${project.location} | FJ Constructions`,
+            description: project.shortDesc,
+            images: [`/projects/${project.id}/${project.landingCover}`],
+        },
+    }
 }
 
 export default async function ProjectDetails({

@@ -5,6 +5,18 @@ import VisionSection from "@/components/sections/about-us/vision-section";
 import WhyBuildWithUs from "@/components/sections/about-us/why-build-with-us.section";
 import WhyUsSection from "@/components/sections/about-us/why-us-section";
 import YourProjectDeserveTheBest from "@/components/sections/about-us/your-project-deserve-the-best";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About Us",
+    description:
+        "Learn about FJ Constructions - Bali's trusted construction company. Discover our story, vision, and commitment to quality craftsmanship in villa and residential construction.",
+    openGraph: {
+        title: "About Us | FJ Constructions",
+        description:
+            "Learn about FJ Constructions - Bali's trusted construction company with a commitment to quality craftsmanship.",
+    },
+};
 
 export default function AboutUs() {
     return (
