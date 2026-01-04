@@ -32,8 +32,8 @@ export default function PartnershipForm() {
                     </VerticalFadeIn>
 
                     <VerticalFadeIn className="w-full md:w-1/2">
-                        <Card className="w-full h-[800px] rounded-3xl">
-                            <CardContent className="overflow-y-scroll rounded-3xl">
+                        <Card className="w-full md:h-[800px] rounded-3xl">
+                            <CardContent className="md:overflow-y-scroll rounded-3xl">
                                 <div className="flex flex-col gap-6 py-4">
                                     <Field>
                                         <FieldLabel htmlFor="company-name">Company/Studio Name</FieldLabel>
