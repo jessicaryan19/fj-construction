@@ -11,19 +11,52 @@ import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "@/lib/emailjs";
 import { toast } from "sonner";
 
-
-
 export default function ContactForm() {
     const form = useRef<HTMLFormElement>(null);
     const [isSending, setIsSending] = useState(false);
 
+    const validateForm = (): boolean => {
+        if (!form.current) return false;
+
+        const formData = new FormData(form.current);
+        const name = formData.get('name') as string;
+        const phone = formData.get('phone') as string;
+        const message = formData.get('message') as string;
+
+        if (!name?.trim()) {
+            toast.error('Please enter your name!');
+            document.getElementById('name')?.focus();
+            return false;
+        }
+        if (!phone?.trim()) {
+            toast.error('Please enter your phone number!');
+            document.getElementById('phone')?.focus();
+            return false;
+        }
+
+        // Phone number validation (basic)
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+        if (!phoneRegex.test(phone)) {
+            toast.error('Please enter a valid phone number!');
+            document.getElementById('phone')?.focus();
+            return false;
+        }
+        if (!message?.trim()) {
+            toast.error('Please enter your message!');
+            document.getElementById('message')?.focus();
+            return false;
+        }
+        return true;
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!form.current) return;
+        if (!validateForm()) {
+            return;
+        }
 
         setIsSending(true);
-
         try {
             await emailjs.sendForm(
                 EMAILJS_CONFIG.SERVICE_ID,
@@ -40,8 +73,6 @@ export default function ContactForm() {
             setIsSending(false);
         }
     };
-
-
 
     return (
         <div className="container flex flex-col md:flex-row gap-5 md:gap-8 lg:gap-20 px-4">
@@ -66,21 +97,20 @@ export default function ContactForm() {
                     <CardContent className="rounded-2xl md:rounded-3xl p-4 sm:p-6">
                         <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6 py-2 sm:py-4">
                             <Field>
-                                <FieldLabel htmlFor="user_name">Name</FieldLabel>
-                                <Input id="user_name" name="user_name" autoComplete="off" required />
+                                <FieldLabel htmlFor="name">Name</FieldLabel>
+                                <Input id="name" name="name" />
                             </Field>
                             <Field>
-                                <FieldLabel htmlFor="user_phone">Phone Number</FieldLabel>
-                                <Input id="user_phone" name="user_phone" autoComplete="off" required />
+                                <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+                                <Input id="phone" name="phone" />
                             </Field>
-
                             <Field>
                                 <FieldLabel htmlFor="message">Message</FieldLabel>
-                                <Textarea className="h-48 sm:h-56 md:h-64" id="message" name="message" required />
+                                <Textarea className="h-48 sm:h-56 md:h-64" id="message" name="message" />
                             </Field>
 
                             <SlidingButton
-                                text={isSending ? "Sending..." : "Send Message"}
+                                text={"Send Message"}
                                 type="primary"
                                 isSubmit
                                 disabled={isSending}

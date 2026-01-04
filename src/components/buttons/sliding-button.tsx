@@ -58,9 +58,9 @@ export default function SlidingButton({
     }[type]
 
     const innerButtonStyle = {
-        default: "flex items-center justify-center bg-white rounded-full text-primary",
-        primary: "flex items-center justify-center bg-white rounded-full text-primary",
-        inverted: "flex items-center justify-center bg-primary rounded-full text-white",
+        default: "flex items-center justify-center bg-white rounded-full text-primary cursor-pointer",
+        primary: "flex items-center justify-center bg-white rounded-full text-primary cursor-pointer",
+        inverted: "flex items-center justify-center bg-primary rounded-full text-white cursor-pointer",
     }[type]
 
     const isLeftDirection = direction === "left"
