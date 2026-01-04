@@ -10,6 +10,7 @@ import GlassContainer from "@/components/ui/glass-container";
 import RichTextRenderer from "@/components/ui/rich-text";
 import VerticalFadeIn from "@/components/animations/vertical-fade-in";
 import { motion } from "motion/react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function TestimonialsSection() {
     const [api, setApi] = useState<CarouselApi>()
@@ -45,7 +46,18 @@ export default function TestimonialsSection() {
                     </div>
 
                     <div className="flex flex-col pt-4 md:pt-8 gap-2 md:gap-0">
-                        <Carousel setApi={setApi} opts={{ loop: true, duration: 45 }}>
+                        <Carousel
+                            setApi={setApi}
+                            opts={{
+                                loop: true,
+                                duration: 45
+                            }}
+                            plugins={[
+                                Autoplay({
+                                    delay: 5000,
+                                    stopOnInteraction: true,
+                                }),
+                            ]}>
                             <CarouselContent>
                                 {testimonialsData.map((testimonial, idx) => (
                                     <CarouselItem key={testimonial.name} className="flex gap-20 px-10 md:px-20 py-5 md:py-10 items-start">
