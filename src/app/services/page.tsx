@@ -13,7 +13,7 @@ export default function Services() {
                     <ServicesIntroSection />
                 </VerticalFadeIn>
 
-                <div className="flex flex-col gap-10 px-4">
+                <div className="flex flex-col gap-10">
                     {servicesData.map((service, index) => (
                         <ServiceItem key={service.title} service={service} index={index} />
                     ))}

@@ -40,7 +40,7 @@ export default function ImageRevealCard({ image, title, description }: ImageReve
                     {title}
                 </h6>
 
-                <div className="flex flex-col md:gap-2 items-center">
+                <div className="flex flex-col sm:gap-2 items-center">
                     <Icon
                         icon="iconamoon:arrow-up-6-circle-light"
                         className="text-2xl sm:text-3xl transform transition-all duration-500 translate-y-12
