@@ -25,7 +25,7 @@ export default async function ProjectDetails({
             <main className="min-h-screen w-full flex flex-col gap-20 pb-10 items-center bg-white dark:bg-black">
                 <ProjectHero project={project} />
 
-                <div className="container flex flex-col text-2xl sm:text-3xl md:text-4xl lg:text-5xl gap-5 md:gap-10 px-4">
+                <div className="container flex flex-col text-lg sm:text-2xl md:text-4xl lg:text-5xl gap-5 md:gap-10 px-4">
                     {project.content.map((content, index) => (
                         <ProjectContentRenderer key={index} project={project} content={content} />
                     ))}

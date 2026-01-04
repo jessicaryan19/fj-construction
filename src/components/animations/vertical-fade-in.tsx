@@ -21,7 +21,7 @@ export default function VerticalFadeIn({
     return (
         <AnimatePresence>
             <motion.div
-                className={cn("w-full", className)}
+                className={cn("w-full overflow-visible", className)}
                 ref={ref}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
