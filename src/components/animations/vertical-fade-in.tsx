@@ -19,19 +19,17 @@ export default function VerticalFadeIn({
     const isInView = useInView(ref, { once: false, amount: 0.25 });
 
     return (
-        <AnimatePresence>
-            <motion.div
-                className={cn("w-full overflow-visible", className)}
-                ref={ref}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                    opacity: isInView ? 1 : 0,
-                    y: isInView ? 0 : 20
-                }}
-                transition={{ duration: 0.8, ease: "easeInOut", delay }}
-            >
-                {children}
-            </motion.div>
-        </AnimatePresence>
+        <motion.div
+            className={cn("w-full", className)}
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+                opacity: isInView ? 1 : 0,
+                y: isInView ? 0 : 20
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay }}
+        >
+            {children}
+        </motion.div>
     )
 }
