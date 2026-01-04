@@ -11,6 +11,8 @@ interface SlidingButtonProps {
     onClick?: () => void
     direction?: 'left' | 'right'
     initialWidth?: string
+    isSubmit?: boolean
+    disabled?: boolean
 }
 
 export default function SlidingButton({
@@ -21,18 +23,21 @@ export default function SlidingButton({
     href,
     onClick,
     direction = "right",
+    isSubmit = false,
+    disabled = false,
 }: SlidingButtonProps) {
     const router = useRouter()
 
     const handleClick = () => {
+        if (disabled) return
         onClick?.()
         if (href) router.push(href)
     }
 
     const containerButtonStyle = {
-        default: "relative flex items-center gap-4 px-1 py-1 rounded-full border-2 border-white cursor-pointer w-fit",
-        primary: "relative flex items-center gap-4 px-1 py-1 rounded-full bg-primary cursor-pointer w-fit",
-        inverted: "relative flex items-center gap-4 px-0.5 py-0.5 rounded-full bg-white cursor-pointer w-fit",
+        default: "relative flex items-center gap-4 px-1 py-1 rounded-full border-2 border-white w-fit",
+        primary: "relative flex items-center gap-4 px-1 py-1 rounded-full bg-primary w-fit",
+        inverted: "relative flex items-center gap-4 px-0.5 py-0.5 rounded-full bg-white w-fit",
     }[type]
 
     const innerButtonStyle = {
@@ -41,10 +46,13 @@ export default function SlidingButton({
         inverted: "flex items-center justify-center bg-primary rounded-full text-white",
     }[type]
 
+    const disabledStyle = disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+
     const isLeftDirection = direction === "left"
 
     return (
-        <motion.div
+        <motion.button
+            type={isSubmit ? "submit" : "button"}
             initial="rest"
             whileHover="hover"
             whileTap="hover"
@@ -89,6 +97,6 @@ export default function SlidingButton({
                     <Icon icon={icon} className="text-3xl" />
                 </motion.div>
             </motion.div>
-        </motion.div>
+        </motion.button>
     )
 }
