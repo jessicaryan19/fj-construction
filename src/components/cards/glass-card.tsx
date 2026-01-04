@@ -28,14 +28,14 @@ export default function GlassCard({
                     {link && (
                         <Link
                             href={link}
-                            className="underline text-sm sm:text-md md:text-lg lg:text-xl break-all"
+                            className="underline text-xs md:text-lg lg:text-xl break-all"
                         >
                             {linkName}
                         </Link>
                     )}
-                    <p className="min-h-[1.5rem]">
-                        {description}
-                    </p>
+                    {description && (
+                        <p className="min-h-[1.5rem]">{description}</p>
+                    )}
                     <h5>{title}</h5>
                 </div>
             </VerticalFadeIn>

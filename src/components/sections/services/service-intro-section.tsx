@@ -4,7 +4,7 @@ import StarLongIcon from "@/components/icons/star-long-icon";
 export default function ServicesIntroSection() {
     return (
         <div className="container">
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+            <div className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                 From private residences to large-scale commercial builds, we turn{" "}
 
                 <span className="inline-flex items-baseline text-2xl sm:text-3xl md:text-4xl text-[#3A4A30]">
@@ -30,9 +30,12 @@ export default function ServicesIntroSection() {
                 <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl text-[#3A4A30] underline decoration-[#3A4A30] underline-offset-4 sm:underline-offset-6 md:underline-offset-8 md:inline md:mt-0">
                     a space worth living, working, and investing in.
                 </span>
-            </p>
-            <div className="relative w-screen -mx-[calc((100vw-100%)/2)] mt-4 sm:mt-6 md:mt-8">
-                <StarLongIcon className="object-contain absolute right-0 sm:right-4 md:right-8 text-primary" width={200} height={200} />
+            </div>
+            <div className="relative w-screen -mx-[calc((100vw-100%)/2)] flex justify-end">
+                <StarLongIcon
+                    width={150}
+                    className="object-contain text-primary sm:w-[200px] md:w-[250px] lg:w-[300px]"
+                />
             </div>
         </div>
     )

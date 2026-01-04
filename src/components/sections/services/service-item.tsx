@@ -19,7 +19,7 @@ export default function ServiceItem({
         <VerticalFadeIn>
             <div className="flex flex-col gap-3 sm:gap-5" key={service.title}>
                 <div className={cn(
-                    "container flex flex-col gap-6 items-center",
+                    "container px-4 flex flex-col gap-6 items-center",
                     "md:flex-row md:gap-12 lg:gap-20",
                     isOdd && "md:flex-row-reverse"
                 )}>
@@ -43,7 +43,7 @@ export default function ServiceItem({
                         </div>
                     </div>
 
-                    <span className="flex-1 leading-7 md:leading-9 lg:leading-10 text-primary px-4 md:px-0">
+                    <span className="flex-1 leading-7 md:leading-9 lg:leading-10 text-primary md:px-0">
                         {service.longDesc.map((desc, index) => (
                             index % 2 == 0 ? (
                                 <span key={index} className="text-base md:text-lg lg:text-xl">{desc}</span>

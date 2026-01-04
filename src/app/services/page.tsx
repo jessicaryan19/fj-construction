@@ -3,6 +3,18 @@ import ServiceClosing from "@/components/sections/services/service-closing";
 import ServicesIntroSection from "@/components/sections/services/service-intro-section";
 import ServiceItem from "@/components/sections/services/service-item";
 import { servicesData } from "@/data/services";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services",
+    description:
+        "Explore FJ Constructions' comprehensive construction services in Bali. From villa development to renovations, we offer expert craftsmanship and modern tropical design solutions.",
+    openGraph: {
+        title: "Services | FJ Constructions",
+        description:
+            "Explore FJ Constructions' comprehensive construction services in Bali.",
+    },
+};
 
 export default function Services() {
     return (
@@ -13,13 +25,13 @@ export default function Services() {
                     <ServicesIntroSection />
                 </VerticalFadeIn>
 
-                <div className="flex flex-col gap-10 px-4">
+                <div className="flex flex-col gap-10">
                     {servicesData.map((service, index) => (
                         <ServiceItem key={service.title} service={service} index={index} />
                     ))}
                 </div>
 
-                <ServiceClosing/>
+                <ServiceClosing />
             </main>
         </div>
     );
