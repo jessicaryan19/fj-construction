@@ -3,6 +3,8 @@ import { Adamina } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/layout/navigation-bar";
 import Footer from "@/components/layout/footer";
+import { Toaster } from "sonner";
+
 
 const adamina = Adamina({
   variable: "--font-adamina",
@@ -70,7 +72,8 @@ export default function RootLayout({
           <NavigationBar />
         </div>
         {children}
-        <Footer/>
+        <Toaster position="bottom-right" richColors />
+        <Footer />
       </body>
     </html>
   );

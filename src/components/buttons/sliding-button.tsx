@@ -12,6 +12,8 @@ interface SlidingButtonProps {
     onClick?: () => void
     direction?: 'left' | 'right'
     initialWidth?: string
+    isSubmit?: boolean
+    disabled?: boolean
 }
 
 export default function SlidingButton({
@@ -22,6 +24,8 @@ export default function SlidingButton({
     href,
     onClick,
     direction = "right",
+    isSubmit = false,
+    disabled = false,
 }: SlidingButtonProps) {
     const router = useRouter()
     const [isAnimating, setIsAnimating] = useState(false)
@@ -32,10 +36,10 @@ export default function SlidingButton({
 
         // Store the action to execute after animation
         pendingActionRef.current = () => {
+            if (disabled) return
             onClick?.()
             if (href) router.push(href)
         }
-
         setIsAnimating(true)
     }
 
@@ -48,22 +52,23 @@ export default function SlidingButton({
     }
 
     const containerButtonStyle = {
-        default: "relative flex items-center gap-4 px-1 py-1 rounded-full border-2 border-white cursor-pointer w-fit",
-        primary: "relative flex items-center gap-4 px-1 py-1 rounded-full bg-primary cursor-pointer w-fit",
-        inverted: "relative flex items-center gap-4 px-0.5 py-0.5 rounded-full bg-white cursor-pointer w-fit",
+        default: "relative flex items-center gap-4 px-1 py-1 rounded-full border-2 border-white w-fit",
+        primary: "relative flex items-center gap-4 px-1 py-1 rounded-full bg-primary w-fit",
+        inverted: "relative flex items-center gap-4 px-0.5 py-0.5 rounded-full bg-white w-fit",
     }[type]
 
     const innerButtonStyle = {
-        default: "flex items-center justify-center bg-white rounded-full text-primary",
-        primary: "flex items-center justify-center bg-white rounded-full text-primary",
-        inverted: "flex items-center justify-center bg-primary rounded-full text-white",
+        default: "flex items-center justify-center bg-white rounded-full text-primary cursor-pointer",
+        primary: "flex items-center justify-center bg-white rounded-full text-primary cursor-pointer",
+        inverted: "flex items-center justify-center bg-primary rounded-full text-white cursor-pointer",
     }[type]
 
     const isLeftDirection = direction === "left"
 
     return (
         <AnimatePresence mode="wait">
-            <motion.div
+            <motion.button
+                type={isSubmit ? "submit" : "button"}
                 initial="rest"
                 whileHover="hover"
                 whileTap="hover"
@@ -109,7 +114,7 @@ export default function SlidingButton({
                         <Icon icon={icon} className="text-3xl" />
                     </motion.div>
                 </motion.div>
-            </motion.div>
+            </motion.button>
         </AnimatePresence>
     )
 }
