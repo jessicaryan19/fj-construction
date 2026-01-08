@@ -74,7 +74,7 @@ export default function ProjectSlideshow({
                                     animate="center"
                                     exit="exit"
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                                    className="text-right block md:hidden w-full"
+                                    className="text-left block md:hidden w-full"
                                 >
                                     <h4 className="text-secondary/60 font-medium px-4 md:px-0">
                                         {project.location}
@@ -95,7 +95,7 @@ export default function ProjectSlideshow({
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col">
                                 <motion.div
                                     key={project.name}
                                     custom={direction}
@@ -106,10 +106,10 @@ export default function ProjectSlideshow({
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
                                     className="text-right hidden md:block"
                                 >
-                                    <h4 className="text-secondary/60 font-medium px-4 sm:px-0">
+                                    <h4 className="text-secondary/60 font-medium px-4 sm:px-0 -mb-4">
                                         {project.location}
                                     </h4>
-                                    <h2 className="text-secondary uppercase px-4 sm:px-0">
+                                    <h2 className="text-secondary uppercase px-4 sm:px-0 -mb-2">
                                         {project.name}
                                     </h2>
                                 </motion.div>

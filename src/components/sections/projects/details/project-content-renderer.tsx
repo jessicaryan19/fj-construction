@@ -46,7 +46,7 @@ function TwoImageOneDesc({
                 <div className="aspect-video">
                     <ImageRoundedCard source={`/projects/${project.id}/${content.images?.[0]}`} />
                 </div>
-                <div className="self-end w-full md:w-2/3 text-white bg-primary p-10 md:p-16 lg:p-20 rounded-3xl text-right leading-tight">
+                <div className="self-end w-full md:w-2/3 text-white bg-primary p-10 md:p-16 lg:p-20 rounded-3xl text-center md:text-right leading-tight">
                     <RichTextRenderer content={content.text} />
                 </div>
             </div>
@@ -131,7 +131,7 @@ function ImageTextContent({
     content,
 }: ProjectContentRendererProps) {
     const orientation = content.type === "image-text-right" ? "md:flex-row-reverse" : "md:flex-row";
-    const rendererStyle = content.type === "image-text-right" ? "text-right" : "";
+    const rendererStyle = content.type === "image-text-right" ? "text-left md:text-right" : "";
 
     return (
         <div className={`flex items-center gap-5 md:gap-10 flex-col ${orientation}`}>

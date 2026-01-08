@@ -46,7 +46,7 @@ export default function Footer() {
                             <Link href={socialsData.whatsapp.link} className="underline">{socialsData.whatsapp.name}</Link>
                         </div>
                     </div>
-                    <p className="text-center md:text-left text-sm">Copyright ©️ 2025 FJ Construction. All Rights Reserved.</p>
+                    <p className="text-center md:text-left text-sm">Copyright &copy; 2025 FJ Construction. All Rights Reserved.</p>
                 </div>
 
             </div>
