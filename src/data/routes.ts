@@ -9,9 +9,9 @@ export const routes = [
 
 export const socialsData = {
     email: {
-        name: "constructions.fjc@gmail.com",
+        name: "fjconstructionsbali@gmail.com",
         icon: "tabler:mail-filled",
-        link: "mailto:constructions.fjc@gmail.com"
+        link: "mailto:fjconstructionsbali@gmail.com"
     },
     whatsapp: {
         name: "+62 819 4422 0801",
