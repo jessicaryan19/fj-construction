@@ -14,9 +14,9 @@ export const socialsData = {
         link: "mailto:fjconstructionsbali@gmail.com"
     },
     whatsapp: {
-        name: "+62 819 4422 0801",
+        name: "+62 821 3150 044",
         icon: "ri:whatsapp-fill",
-        link: "https://wa.me/6281944220801"
+        link: "https://wa.me/628213150044"
     },
     instagram: {
         name: "@fjconstructionsbali",
